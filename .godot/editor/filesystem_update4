@@ -1,2 +1,4 @@
-res://enemy.tscn
+res://Player.tscn
 res://enemy.gd
+res://enemy.tscn
+res://Test_Scene.tscn
