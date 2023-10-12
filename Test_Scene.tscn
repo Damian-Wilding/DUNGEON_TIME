@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://4lhdkvlesk5d"]
+
+[ext_resource type="PackedScene" uid="uid://c0qx7fkeyqckq" path="res://Player.tscn" id="1_m7klh"]
+[ext_resource type="Script" path="res://Test_Scene.gd" id="1_p8lkt"]
+[ext_resource type="PackedScene" uid="uid://dqnqijaskwcm1" path="res://enemy.tscn" id="2_qe32p"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_p8lkt")
+
+[node name="Player" parent="." instance=ExtResource("1_m7klh")]
+position = Vector2(506, 275)
+
+[node name="Enemy" parent="." instance=ExtResource("2_qe32p")]
+position = Vector2(344, 314)
+
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]

@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=3 uid="uid://c0qx7fkeyqckq"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_vcgm3"]
+[ext_resource type="Texture2D" uid="uid://bpel383npkgw0" path="res://assets/sprites/test_sprites/test_player_down.png" id="2_7b0fk"]
+[ext_resource type="Texture2D" uid="uid://ccysj0ta2tclx" path="res://assets/sprites/test_sprites/test_player_left.png" id="3_h63w5"]
+[ext_resource type="Texture2D" uid="uid://du57nt503o4m2" path="res://assets/sprites/test_sprites/test_player_right.png" id="4_pcdyn"]
+[ext_resource type="Texture2D" uid="uid://c2if4d4b3j06j" path="res://assets/sprites/test_sprites/test_player_up.png" id="5_tk4nr"]
+[ext_resource type="Texture2D" uid="uid://c1rg7xyenpbjl" path="res://assets/sprites/test_sprites/test_attack.png" id="6_na75b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ogso"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7b0fk")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_h63w5")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_pcdyn")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_tk4nr")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pcjp"]
+size = Vector2(50, 50)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vlt30"]
+radius = 13.0
+height = 62.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h718t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_na75b")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}]
+
+[node name="Player" type="Area2D"]
+position = Vector2(444, 185)
+script = ExtResource("1_vcgm3")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1ogso")
+animation = &"up"
+
+[node name="PlayerHitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7pcjp")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="HitboxParent" type="Area2D" parent="."]
+
+[node name="AttackHitbox" type="CollisionShape2D" parent="HitboxParent"]
+position = Vector2(0, -40)
+rotation = 1.57056
+shape = SubResource("CapsuleShape2D_vlt30")
+debug_color = Color(0.705882, 0.266667, 1, 0.419608)
+
+[node name="HitboxSprite" type="AnimatedSprite2D" parent="HitboxParent"]
+position = Vector2(0.500013, -41.25)
+scale = Vector2(0.786667, 1.18)
+sprite_frames = SubResource("SpriteFrames_h718t")
+animation = &"attack"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="HitboxParent" to="." method="_on_hitbox_parent_body_entered"]
