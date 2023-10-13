@@ -89,5 +89,14 @@ scale = Vector2(0.786667, 1.18)
 sprite_frames = SubResource("SpriteFrames_h718t")
 animation = &"attack"
 
+[node name="AttackCooldownTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="HitboxParent" to="." method="_on_hitbox_parent_body_entered"]
+[connection signal="timeout" from="AttackCooldownTimer" to="." method="_on_attack_cooldown_timer_timeout"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

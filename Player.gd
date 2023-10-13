@@ -1,13 +1,18 @@
 extends Area2D
 
 signal hit
-var speed = 300
+var speed = 250
 var screen_size
+var is_player_attacking = false
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
+	# Hide the player's attack hitbox.
+	$HitboxParent.hide()
+	# Disable the player's hitbox.
+	$HitboxParent/AttackHitbox.set_deferred("disabled", true)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,7 +37,25 @@ func _process(delta):
 		velocity.y -= 1
 		if rotation != 0:
 			rotation = 0
-		
+	
+	
+	# Check to see if the player is attacking.
+	if is_player_attacking == false:
+		# Check to see if the player wants to attack.
+		if Input.is_action_pressed("attack"):
+			# Show the attack hitbox
+			$HitboxParent.show()
+			# Activate the attack hitbox.
+			$HitboxParent/AttackHitbox.set_deferred("disabled", false)
+			# Start the AttackTimer.
+			$AttackTimer.start()
+			# Start the AttackCooldownTimer.
+			$AttackCooldownTimer.start()
+			# Set is_player_attacking to be true since the player is now attacking.
+			is_player_attacking = true
+			
+	
+	
 		
 	# Normalizes velocity (makes it so that diagonal movement isn't faster) and plays the sprite animation if the player is moving.
 	if velocity.length() > 0:
@@ -59,8 +82,19 @@ func _on_body_entered(body):
 
 
 # This is called when a hitbox enters the attack hitbox.
-
-
-
 func _on_hitbox_parent_body_entered(body):
 	body.queue_free()
+
+
+# This is called when the player's attack timer runs out.
+func _on_attack_timer_timeout():
+	# Hide the attack hitbox since the players attack has ended.
+	$HitboxParent.hide()
+	# Deactivate the attack hitbox since it's still active while hidden.
+	$HitboxParent/AttackHitbox.set_deferred("disabled", true)
+	
+
+# This is called when the player's attack cooldown has finished.
+func _on_attack_cooldown_timer_timeout():
+	# Tell the game that the player is no longer attacking.
+	is_player_attacking = false
