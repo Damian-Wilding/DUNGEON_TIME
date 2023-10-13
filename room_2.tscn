@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://bulii8s0ob5rn"]
+
+[ext_resource type="Texture2D" uid="uid://bm76unc27hmjn" path="res://assets/sprites/test_sprites/test_room2.png" id="1_8y1dk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2wudm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8y1dk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ola1n"]
+size = Vector2(175, 34)
+
+[node name="Room2" type="Node"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 324)
+sprite_frames = SubResource("SpriteFrames_2wudm")
+
+[node name="Door3" type="CollisionShape2D" parent="."]
+position = Vector2(550.5, 54)
+shape = SubResource("RectangleShape2D_ola1n")
+debug_color = Color(0, 0.647059, 0.188235, 0.419608)
+
+[node name="Door2" type="CollisionShape2D" parent="."]
+position = Vector2(555, 592)
+shape = SubResource("RectangleShape2D_ola1n")
+debug_color = Color(0, 0.647059, 0.188235, 0.419608)

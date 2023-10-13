@@ -3,3 +3,8 @@ res://enemy.gd
 res://Player.gd
 res://Player.tscn
 res://Test_Scene.tscn
+res://room_1.tscn
+res://Main.gd
+res://main.tscn
+res://room_1.gd
+res://room_2.tscn

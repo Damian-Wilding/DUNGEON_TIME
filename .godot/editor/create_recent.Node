@@ -1,5 +1,7 @@
+Area2D
+AnimatedSprite2D
+Node
+CollisionShape2D
+Label
 Timer
 RigidBody2D
-CollisionShape2D
-AnimatedSprite2D
-Area2D

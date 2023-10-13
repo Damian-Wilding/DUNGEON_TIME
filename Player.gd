@@ -10,9 +10,9 @@ var is_player_attacking = false
 func _ready():
 	screen_size = get_viewport_rect().size
 	# Hide the player's attack hitbox.
-	$HitboxParent.hide()
+	$AttackHitboxParent.hide()
 	# Disable the player's hitbox.
-	$HitboxParent/AttackHitbox.set_deferred("disabled", true)
+	$AttackHitboxParent/AttackHitbox.set_deferred("disabled", true)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,9 +44,9 @@ func _process(delta):
 		# Check to see if the player wants to attack.
 		if Input.is_action_pressed("attack"):
 			# Show the attack hitbox
-			$HitboxParent.show()
+			$AttackHitboxParent.show()
 			# Activate the attack hitbox.
-			$HitboxParent/AttackHitbox.set_deferred("disabled", false)
+			$AttackHitboxParent/AttackHitbox.set_deferred("disabled", false)
 			# Start the AttackTimer.
 			$AttackTimer.start()
 			# Start the AttackCooldownTimer.
@@ -70,7 +70,8 @@ func _process(delta):
 	
 	
 	# Sets a clamp on the players position so that they can't go off screen.
-	position = position.clamp(Vector2.ZERO, screen_size)
+	position = position.clamp(Vector2(145,75), Vector2(1152 - 158, 648 - 100)) # These will need to be changed if the size of the game is changed!
+	
 
 
 # This is called when another hitbox enters the player's hitbox.
@@ -89,9 +90,9 @@ func _on_hitbox_parent_body_entered(body):
 # This is called when the player's attack timer runs out.
 func _on_attack_timer_timeout():
 	# Hide the attack hitbox since the players attack has ended.
-	$HitboxParent.hide()
+	$AttackHitboxParent.hide()
 	# Deactivate the attack hitbox since it's still active while hidden.
-	$HitboxParent/AttackHitbox.set_deferred("disabled", true)
+	$AttackHitboxParent/AttackHitbox.set_deferred("disabled", true)
 	
 
 # This is called when the player's attack cooldown has finished.

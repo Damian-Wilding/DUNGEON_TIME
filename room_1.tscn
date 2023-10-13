@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpxfrv8uvvuhw"]
+
+[ext_resource type="Texture2D" uid="uid://bka4by2s187fv" path="res://assets/sprites/test_sprites/test_room1.png" id="1_3p2ob"]
+[ext_resource type="Script" path="res://room_1.gd" id="1_4e4nr"]
+[ext_resource type="FontFile" uid="uid://2wx5ii18ovn6" path="res://assets/fonts/PixelAzureBonds-327Z.ttf" id="2_ranl1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wha8e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3p2ob")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gkdh"]
+size = Vector2(175, 34)
+
+[node name="Room1" type="Node"]
+script = ExtResource("1_4e4nr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 324)
+sprite_frames = SubResource("SpriteFrames_wha8e")
+
+[node name="WelcomeMessage" type="Label" parent="."]
+offset_right = 1153.0
+offset_bottom = 648.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ranl1")
+theme_override_font_sizes/font_size = 39
+text = "Welcome to Dungeon TIme!
+Use the arrow keys to move"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UseDoorMessage" type="Label" parent="."]
+offset_top = -2.0
+offset_right = 1109.0
+offset_bottom = 111.0
+theme_override_colors/font_color = Color(0.52549, 0.52549, 0.52549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ranl1")
+text = "Enter here 
+when you're ready"
+horizontal_alignment = 1
+
+[node name="Door1Parent" type="Area2D" parent="."]
+
+[node name="Door1" type="CollisionShape2D" parent="Door1Parent"]
+position = Vector2(550.5, 54)
+shape = SubResource("RectangleShape2D_7gkdh")
+debug_color = Color(0, 0.647059, 0.188235, 0.419608)
+
+[connection signal="area_shape_entered" from="Door1Parent" to="." method="_on_door_1_parent_area_shape_entered"]
