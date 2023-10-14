@@ -13,8 +13,9 @@ func _process(delta):
 
 # This is called when the player enters Door1.
 func _on_room_1_door_1_entered():
-	# Delete the current room.
-	$Room1.queue_free()
+	# Deactivate the current room.
+	$Room1.hide()
+	$Room1.set_deferred("disabled", true)
 	# Bring in the new room.
 	var scene = load("res://room_2.tscn")
 	var instance = scene.instantiate()

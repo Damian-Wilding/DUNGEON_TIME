@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bulii8s0ob5rn"]
+[gd_scene load_steps=5 format=3 uid="uid://bulii8s0ob5rn"]
 
+[ext_resource type="Script" path="res://room_2.gd" id="1_6fpi8"]
 [ext_resource type="Texture2D" uid="uid://bm76unc27hmjn" path="res://assets/sprites/test_sprites/test_room2.png" id="1_8y1dk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2wudm"]
@@ -16,18 +17,26 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ola1n"]
 size = Vector2(175, 34)
 
-[node name="Room2" type="Node"]
+[node name="Room2" type="Area2D"]
+script = ExtResource("1_6fpi8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(576, 324)
 sprite_frames = SubResource("SpriteFrames_2wudm")
 
-[node name="Door3" type="CollisionShape2D" parent="."]
+[node name="Door2Parent" type="Area2D" parent="."]
+
+[node name="Door2" type="CollisionShape2D" parent="Door2Parent"]
+position = Vector2(555, 592)
+shape = SubResource("RectangleShape2D_ola1n")
+debug_color = Color(0, 0.647059, 0.188235, 0.419608)
+
+[node name="Door3Parent" type="Area2D" parent="."]
+
+[node name="Door3" type="CollisionShape2D" parent="Door3Parent"]
 position = Vector2(550.5, 54)
 shape = SubResource("RectangleShape2D_ola1n")
 debug_color = Color(0, 0.647059, 0.188235, 0.419608)
 
-[node name="Door2" type="CollisionShape2D" parent="."]
-position = Vector2(555, 592)
-shape = SubResource("RectangleShape2D_ola1n")
-debug_color = Color(0, 0.647059, 0.188235, 0.419608)
+[connection signal="area_shape_entered" from="Door2Parent" to="." method="_on_door_2_parent_area_shape_entered"]
+[connection signal="area_shape_entered" from="Door3Parent" to="." method="_on_door_3_parent_area_shape_entered"]
