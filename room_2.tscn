@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bulii8s0ob5rn"]
+[gd_scene load_steps=7 format=3 uid="uid://bulii8s0ob5rn"]
 
 [ext_resource type="Script" path="res://room_2.gd" id="1_6fpi8"]
 [ext_resource type="Texture2D" uid="uid://bm76unc27hmjn" path="res://assets/sprites/test_sprites/test_room2.png" id="1_8y1dk"]
+[ext_resource type="PackedScene" uid="uid://dqnqijaskwcm1" path="res://enemy.tscn" id="3_chioo"]
+[ext_resource type="FontFile" uid="uid://2wx5ii18ovn6" path="res://assets/fonts/PixelAzureBonds-327Z.ttf" id="4_awts7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2wudm"]
 animations = [{
@@ -37,6 +39,57 @@ debug_color = Color(0, 0.647059, 0.188235, 0.419608)
 position = Vector2(550.5, 54)
 shape = SubResource("RectangleShape2D_ola1n")
 debug_color = Color(0, 0.647059, 0.188235, 0.419608)
+
+[node name="Enemy" parent="." instance=ExtResource("3_chioo")]
+position = Vector2(552, 296)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_chioo")]
+position = Vector2(393, 298)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_chioo")]
+position = Vector2(474, 297)
+
+[node name="Enemy4" parent="." instance=ExtResource("3_chioo")]
+position = Vector2(316, 299)
+
+[node name="Enemy5" parent="." instance=ExtResource("3_chioo")]
+position = Vector2(241, 297)
+
+[node name="Enemy6" parent="." instance=ExtResource("3_chioo")]
+position = Vector2(169, 299)
+
+[node name="Enemy7" parent="." instance=ExtResource("3_chioo")]
+position = Vector2(637, 297)
+
+[node name="Enemy8" parent="." instance=ExtResource("3_chioo")]
+position = Vector2(722, 298)
+
+[node name="Enemy9" parent="." instance=ExtResource("3_chioo")]
+position = Vector2(804, 297)
+
+[node name="Enemy10" parent="." instance=ExtResource("3_chioo")]
+position = Vector2(883, 297)
+
+[node name="Enemy11" parent="." instance=ExtResource("3_chioo")]
+position = Vector2(962, 296)
+
+[node name="EnemyWarning" type="Label" parent="."]
+offset_right = 1152.0
+offset_bottom = 318.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("4_awts7")
+theme_override_font_sizes/font_size = 23
+text = "Uh oh! 
+There's some enemies! 
+Press the space bar to attack them, 
+but be careful not to let them touch you."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(933, 115)
 
 [connection signal="area_shape_entered" from="Door2Parent" to="." method="_on_door_2_parent_area_shape_entered"]
 [connection signal="area_shape_entered" from="Door3Parent" to="." method="_on_door_3_parent_area_shape_entered"]

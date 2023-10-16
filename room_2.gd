@@ -1,4 +1,4 @@
-extends Node
+extends Area2D
 
 signal door2_entered
 signal door3_entered

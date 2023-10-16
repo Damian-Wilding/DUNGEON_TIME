@@ -1,7 +1,7 @@
 extends Area2D
 
 signal hit
-var speed = 250
+var speed = 500
 var screen_size
 var is_player_attacking = false
 
@@ -11,7 +11,7 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	# Hide the player's attack hitbox.
 	$AttackHitboxParent.hide()
-	# Disable the player's hitbox.
+	# Disable the player's attack hitbox.
 	$AttackHitboxParent/AttackHitbox.set_deferred("disabled", true)
 	
 
@@ -72,18 +72,27 @@ func _process(delta):
 	# Sets a clamp on the players position so that they can't go off screen.
 	position = position.clamp(Vector2(145,75), Vector2(1152 - 158, 648 - 100)) # These will need to be changed if the size of the game is changed!
 	
-
-
+	
+# This is called to change the playable area the player can be in.
+func _change_player_area():
+	screen_size = 
+	print(screen_size)
+	
+	
 # This is called when another hitbox enters the player's hitbox.
 func _on_body_entered(body):
-	# Send out the "player has been hit" signal.
-	hit.emit()
-	# Kill (delete) the body that entered the player hitbox.
-	body.queue_free()
+	# Check to see if the hitbox is active.
+	if body.disabled == false:
+		# Send out the "player has been hit" signal.
+		print("Player has been hit")
+		hit.emit()
+		# Kill (delete) the body that entered the player hitbox.
+		body.queue_free()
 
 
 # This is called when a hitbox enters the attack hitbox.
 func _on_hitbox_parent_body_entered(body):
+	print("Attacked")
 	body.queue_free()
 
 

@@ -1,7 +1,9 @@
+Marker2D
+Camera2D
+Label
 Area2D
 AnimatedSprite2D
 Node
 CollisionShape2D
-Label
 Timer
 RigidBody2D
