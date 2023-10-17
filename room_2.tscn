@@ -91,5 +91,5 @@ vertical_alignment = 1
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(933, 115)
 
-[connection signal="area_shape_entered" from="Door2Parent" to="." method="_on_door_2_parent_area_shape_entered"]
-[connection signal="area_shape_entered" from="Door3Parent" to="." method="_on_door_3_parent_area_shape_entered"]
+[connection signal="body_entered" from="Door2Parent" to="." method="_on_door_2_parent_body_entered"]
+[connection signal="body_entered" from="Door3Parent" to="." method="_on_door_3_parent_body_entered"]

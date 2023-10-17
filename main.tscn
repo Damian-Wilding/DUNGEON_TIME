@@ -20,3 +20,5 @@ position = Vector2(576, 324)
 position = Vector2(553, 535)
 
 [connection signal="door1_entered" from="Room1" to="." method="_on_room_1_door_1_entered"]
+[connection signal="door2_entered" from="Room2" to="." method="_on_room_2_door_2_entered"]
+[connection signal="door3_entered" from="Room2" to="." method="_on_room_2_door_3_entered"]

@@ -97,4 +97,4 @@ position = Vector2(874, 10)
 shape = SubResource("RectangleShape2D_y4l23")
 debug_color = Color(0.972549, 0.0666667, 0.392157, 0.419608)
 
-[connection signal="area_shape_entered" from="Door1Parent" to="." method="_on_door_1_parent_area_shape_entered"]
+[connection signal="body_entered" from="Door1Parent" to="." method="_on_door_1_parent_body_entered"]
