@@ -66,7 +66,7 @@ func _process(delta):
 		
 		
 	# Updates the position of the player.
-	position += velocity * delta 
+	move_and_collide(velocity * delta)
 	
 	
 	##### Sets a clamp on the players position so that they can't go off screen.
