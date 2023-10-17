@@ -58,7 +58,6 @@ func _on_room_1_door_1_entered():
 	_move_camera_up()
 	$Camera2D.zoom.x -= .75
 	$Camera2D.zoom.y -= .75
-	$Player._change_player_area()
 	_move_player_to_bottom()
 	#$Player.position = $Room2/Marker2D.position
 	#move_child($Player, 10)

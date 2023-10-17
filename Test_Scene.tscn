@@ -7,10 +7,10 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_p8lkt")
 
-[node name="Player" parent="." instance=ExtResource("1_m7klh")]
-position = Vector2(506, 275)
-
 [node name="Enemy" parent="." instance=ExtResource("2_qe32p")]
 position = Vector2(344, 314)
+
+[node name="Player" parent="." instance=ExtResource("1_m7klh")]
+position = Vector2(506, 275)
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]

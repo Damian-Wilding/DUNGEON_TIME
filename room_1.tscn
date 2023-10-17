@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpxfrv8uvvuhw"]
+[gd_scene load_steps=9 format=3 uid="uid://cpxfrv8uvvuhw"]
 
 [ext_resource type="Texture2D" uid="uid://bka4by2s187fv" path="res://assets/sprites/test_sprites/test_room1.png" id="1_3p2ob"]
 [ext_resource type="Script" path="res://room_1.gd" id="1_4e4nr"]
@@ -17,6 +17,15 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gkdh"]
 size = Vector2(175, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_266qw"]
+size = Vector2(1143.5, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4l23"]
+size = Vector2(459, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0m4x"]
+size = Vector2(459, 72)
 
 [node name="Room1" type="Area2D"]
 script = ExtResource("1_4e4nr")
@@ -58,5 +67,34 @@ horizontal_alignment = 1
 position = Vector2(550.5, 54)
 shape = SubResource("RectangleShape2D_7gkdh")
 debug_color = Color(0, 0.647059, 0.188235, 0.419608)
+
+[node name="PlayerBoundaries" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="PlayerBoundaries"]
+position = Vector2(575.25, 613)
+shape = SubResource("RectangleShape2D_266qw")
+debug_color = Color(0.972549, 0.0666667, 0.392157, 0.419608)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries"]
+position = Vector2(230.5, 11)
+shape = SubResource("RectangleShape2D_y4l23")
+debug_color = Color(0.972549, 0.0666667, 0.392157, 0.419608)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayerBoundaries"]
+position = Vector2(81, 314)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_w0m4x")
+debug_color = Color(0.972549, 0.0666667, 0.392157, 0.419608)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="PlayerBoundaries"]
+position = Vector2(1062, 322)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_w0m4x")
+debug_color = Color(0.972549, 0.0666667, 0.392157, 0.419608)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="PlayerBoundaries"]
+position = Vector2(874, 10)
+shape = SubResource("RectangleShape2D_y4l23")
+debug_color = Color(0.972549, 0.0666667, 0.392157, 0.419608)
 
 [connection signal="area_shape_entered" from="Door1Parent" to="." method="_on_door_1_parent_area_shape_entered"]

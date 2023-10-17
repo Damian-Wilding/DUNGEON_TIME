@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 
 signal hit
 var speed = 500
@@ -69,25 +69,23 @@ func _process(delta):
 	position += velocity * delta 
 	
 	
-	# Sets a clamp on the players position so that they can't go off screen.
-	position = position.clamp(Vector2(145,75), Vector2(1152 - 158, 648 - 100)) # These will need to be changed if the size of the game is changed!
-	
-	
-# This is called to change the playable area the player can be in.
-func _change_player_area():
-	screen_size = 
-	print(screen_size)
+	##### Sets a clamp on the players position so that they can't go off screen.
+	####position = position.clamp(Vector2(145,75), Vector2(1152 - 158, 648 - 100)) # These will need to be changed if the size of the game is changed!
 	
 	
 # This is called when another hitbox enters the player's hitbox.
 func _on_body_entered(body):
 	# Check to see if the hitbox is active.
+	print(body)
 	if body.disabled == false:
 		# Send out the "player has been hit" signal.
 		print("Player has been hit")
 		hit.emit()
 		# Kill (delete) the body that entered the player hitbox.
 		body.queue_free()
+		
+
+
 
 
 # This is called when a hitbox enters the attack hitbox.
