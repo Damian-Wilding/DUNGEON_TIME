@@ -55,8 +55,6 @@ func _process(delta):
 			is_player_attacking = true
 			
 	
-	
-		
 	# Normalizes velocity (makes it so that diagonal movement isn't faster) and plays the sprite animation if the player is moving.
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
@@ -73,25 +71,25 @@ func _process(delta):
 	####position = position.clamp(Vector2(145,75), Vector2(1152 - 158, 648 - 100)) # These will need to be changed if the size of the game is changed!
 	
 	
-# This is called when another hitbox enters the player's hitbox.
-func _on_body_entered(body):
-	# Check to see if the hitbox is active.
-	print(body)
-	if body.disabled == false:
-		# Send out the "player has been hit" signal.
-		print("Player has been hit")
-		hit.emit()
-		# Kill (delete) the body that entered the player hitbox.
-		body.queue_free()
+##### This is called when another hitbox enters the player's hitbox.
+####func _on_body_entered(body):
+####	# Check to see if the hitbox is active.
+####	print(body)
+####	if body.disabled == false:
+####		# Send out the "player has been hit" signal.
+####		print("Player has been hit")
+####		hit.emit()
+####		# Kill (delete) the body that entered the player hitbox.
+####		body.queue_free()
 		
 
 
 
 
-# This is called when a hitbox enters the attack hitbox.
-func _on_hitbox_parent_body_entered(body):
-	print("Attacked")
-	body.queue_free()
+########## This is called when a hitbox enters the attack hitbox.
+#########func _on_hitbox_parent_body_entered(body):
+#########	print("Attacked")
+#########	body.queue_free()
 
 
 # This is called when the player's attack timer runs out.

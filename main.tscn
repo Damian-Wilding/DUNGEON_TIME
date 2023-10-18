@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxxh6hpo6cbk6"]
+[gd_scene load_steps=6 format=3 uid="uid://cxxh6hpo6cbk6"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_2fgkk"]
 [ext_resource type="PackedScene" uid="uid://cpxfrv8uvvuhw" path="res://room_1.tscn" id="2_shq6n"]
 [ext_resource type="PackedScene" uid="uid://c0qx7fkeyqckq" path="res://Player.tscn" id="3_khukx"]
 [ext_resource type="PackedScene" uid="uid://bulii8s0ob5rn" path="res://room_2.tscn" id="4_2sdx2"]
+[ext_resource type="PackedScene" uid="uid://c6ofsnasd3pyu" path="res://room_3.tscn" id="4_bck3q"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_2fgkk")
@@ -12,6 +13,9 @@ script = ExtResource("1_2fgkk")
 
 [node name="Room2" parent="." instance=ExtResource("4_2sdx2")]
 position = Vector2(0, -648)
+
+[node name="Room3" parent="." instance=ExtResource("4_bck3q")]
+position = Vector2(0, -1296)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
@@ -22,3 +26,5 @@ position = Vector2(553, 535)
 [connection signal="door1_entered" from="Room1" to="." method="_on_room_1_door_1_entered"]
 [connection signal="door2_entered" from="Room2" to="." method="_on_room_2_door_2_entered"]
 [connection signal="door3_entered" from="Room2" to="." method="_on_room_2_door_3_entered"]
+[connection signal="door4_entered" from="Room3" to="." method="_on_room_3_door_4_entered"]
+[connection signal="door5_entered" from="Room3" to="." method="_on_room_3_door_5_entered"]

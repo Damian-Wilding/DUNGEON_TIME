@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://c6ofsnasd3pyu"]
+
+[ext_resource type="Texture2D" uid="uid://bm76unc27hmjn" path="res://assets/sprites/test_sprites/test_room2.png" id="1_4mhbp"]
+[ext_resource type="Script" path="res://room_3.gd" id="1_5jrst"]
+[ext_resource type="FontFile" uid="uid://2wx5ii18ovn6" path="res://assets/fonts/PixelAzureBonds-327Z.ttf" id="3_drdrl"]
+[ext_resource type="PackedScene" uid="uid://dql7dlfkt24a2" path="res://fire_powerup.tscn" id="4_cqltw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_01jal"]
+size = Vector2(437, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fs5i4"]
+size = Vector2(472, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1v8aq"]
+size = Vector2(195, 49.5)
+
+[node name="Room3" type="Area2D"]
+script = ExtResource("1_5jrst")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("1_4mhbp")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(226, 17.5)
+shape = SubResource("RectangleShape2D_01jal")
+debug_color = Color(0.952941, 0, 0.290196, 0.419608)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(881, 603)
+shape = SubResource("RectangleShape2D_01jal")
+debug_color = Color(0.952941, 0, 0.290196, 0.419608)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(210.5, 603)
+shape = SubResource("RectangleShape2D_01jal")
+debug_color = Color(0.952941, 0, 0.290196, 0.419608)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(877, 17)
+shape = SubResource("RectangleShape2D_01jal")
+debug_color = Color(0.952941, 0, 0.290196, 0.419608)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
+position = Vector2(89, 316)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_fs5i4")
+debug_color = Color(0.952941, 0, 0.290196, 0.419608)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
+position = Vector2(1053, 316)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_fs5i4")
+debug_color = Color(0.952941, 0, 0.290196, 0.419608)
+
+[node name="Door5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door5"]
+position = Vector2(548, 37)
+shape = SubResource("RectangleShape2D_1v8aq")
+debug_color = Color(0, 0.643137, 0.270588, 0.419608)
+
+[node name="Door4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door4"]
+position = Vector2(547, 603)
+shape = SubResource("RectangleShape2D_1v8aq")
+debug_color = Color(0, 0.643137, 0.270588, 0.419608)
+
+[node name="PowerupMessage" type="Label" parent="."]
+offset_left = 785.0
+offset_top = 192.0
+offset_right = 974.0
+offset_bottom = 262.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("3_drdrl")
+theme_override_font_sizes/font_size = 25
+text = "Look!
+A Powerup!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FirePowerup" parent="." instance=ExtResource("4_cqltw")]
+position = Vector2(876, 299)
+
+[connection signal="body_entered" from="Door5" to="." method="_on_door_5_body_entered"]
+[connection signal="body_entered" from="Door4" to="." method="_on_door_4_body_entered"]

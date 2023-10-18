@@ -9,3 +9,5 @@ res://enemy.tscn
 res://Test_Scene.tscn
 res://Main.gd
 res://Player.gd
+res://room_3.tscn
+res://room_3.gd

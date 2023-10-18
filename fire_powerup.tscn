@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dql7dlfkt24a2"]
+
+[ext_resource type="Texture2D" uid="uid://dywak851l54fy" path="res://assets/sprites/test_sprites/test_fire_powerup.png" id="1_w1e52"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4mumm"]
+radius = 21.0
+height = 54.0
+
+[node name="FirePowerup" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.5, 0.5)
+scale = Vector2(3, 3)
+texture = ExtResource("1_w1e52")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.499939, 0.5)
+shape = SubResource("CapsuleShape2D_4mumm")
+debug_color = Color(0.588235, 0.552941, 0, 0.419608)

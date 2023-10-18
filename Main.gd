@@ -96,3 +96,25 @@ func _on_room_2_door_3_entered():
 	# Move the Player and Camera to be in Room2.
 	_move_camera_up()
 	_move_player_through_upper_door()
+
+
+# This is called when the player enters Door4.
+func _on_room_3_door_4_entered():
+	# Reactivate Room2.
+	_activate_room($Room2)
+	# Deactivate Room3.
+	_deactivate_room($Room3)
+	# Move the Player and Camera to be in Room2.
+	_move_camera_down()
+	_move_player_through_lower_door()
+
+
+# This is called when the player enters Door5.
+func _on_room_3_door_5_entered():
+	# Reactivate Room4.
+	_activate_room($Room4)
+	# Deactivate Room3.
+	_deactivate_room($Room3)
+	# Move the Player and Camera to be in Room4.
+	_move_camera_up()
+	_move_player_through_upper_door()
