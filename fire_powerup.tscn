@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dql7dlfkt24a2"]
+[gd_scene load_steps=4 format=3 uid="uid://dql7dlfkt24a2"]
 
+[ext_resource type="Script" path="res://fire_powerup.gd" id="1_2kygo"]
 [ext_resource type="Texture2D" uid="uid://dywak851l54fy" path="res://assets/sprites/test_sprites/test_fire_powerup.png" id="1_w1e52"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4mumm"]
@@ -7,6 +8,7 @@ radius = 21.0
 height = 54.0
 
 [node name="FirePowerup" type="Area2D"]
+script = ExtResource("1_2kygo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-0.5, 0.5)
@@ -17,3 +19,5 @@ texture = ExtResource("1_w1e52")
 position = Vector2(0.499939, 0.5)
 shape = SubResource("CapsuleShape2D_4mumm")
 debug_color = Color(0.588235, 0.552941, 0, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

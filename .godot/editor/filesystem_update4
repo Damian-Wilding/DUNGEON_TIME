@@ -11,3 +11,7 @@ res://Main.gd
 res://Player.gd
 res://room_3.tscn
 res://room_3.gd
+res://fireball.tscn
+res://fireball.gd
+res://fire_powerup.gd
+res://fire_powerup.tscn
