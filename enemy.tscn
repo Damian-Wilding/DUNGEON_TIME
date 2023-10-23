@@ -17,7 +17,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Enemy" type="Area2D"]
+[node name="Enemy" type="Area2D" groups=["enemies"]]
 position = Vector2(150, 109)
 script = ExtResource("1_m8yka")
 metadata/_edit_group_ = true

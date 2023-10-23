@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cihydoq6mjcnw"]
+
+[ext_resource type="Texture2D" uid="uid://chf4joc5ad771" path="res://assets/sprites/test_sprites/test_key.png" id="1_ok7d6"]
+[ext_resource type="Script" path="res://key.gd" id="1_s5cfd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fktym"]
+radius = 4.0
+height = 20.0
+
+[node name="Key" type="Area2D"]
+scale = Vector2(5, 5)
+script = ExtResource("1_s5cfd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ok7d6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fktym")
+debug_color = Color(0.509804, 0.576471, 0, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

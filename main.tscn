@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bks2y4b5131il"]
+[gd_scene load_steps=8 format=3 uid="uid://cxxh6hpo6cbk6"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_2fgkk"]
-[ext_resource type="PackedScene" path="res://room_1.tscn" id="2_shq6n"]
+[ext_resource type="PackedScene" uid="uid://cpxfrv8uvvuhw" path="res://room_1.tscn" id="2_shq6n"]
 [ext_resource type="PackedScene" uid="uid://c0qx7fkeyqckq" path="res://Player.tscn" id="3_khukx"]
-[ext_resource type="PackedScene" path="res://room_2.tscn" id="4_2sdx2"]
-[ext_resource type="PackedScene" path="res://room_3.tscn" id="4_bck3q"]
+[ext_resource type="PackedScene" uid="uid://bulii8s0ob5rn" path="res://room_2.tscn" id="4_2sdx2"]
+[ext_resource type="PackedScene" uid="uid://c6ofsnasd3pyu" path="res://room_3.tscn" id="4_bck3q"]
+[ext_resource type="PackedScene" uid="uid://c51nxve14pqa5" path="res://room_4.tscn" id="5_t50an"]
+[ext_resource type="PackedScene" uid="uid://c8cdepublwl2q" path="res://room_5.tscn" id="6_ttyf8"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_2fgkk")
@@ -17,6 +19,12 @@ position = Vector2(0, -648)
 [node name="Room3" parent="." instance=ExtResource("4_bck3q")]
 position = Vector2(0, -1296)
 
+[node name="Room4" parent="." instance=ExtResource("5_t50an")]
+position = Vector2(0, -1944)
+
+[node name="Room5" parent="." instance=ExtResource("6_ttyf8")]
+position = Vector2(-1152, -1944)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
 
@@ -28,3 +36,8 @@ position = Vector2(553, 535)
 [connection signal="door3_entered" from="Room2" to="." method="_on_room_2_door_3_entered"]
 [connection signal="door4_entered" from="Room3" to="." method="_on_room_3_door_4_entered"]
 [connection signal="door5_entered" from="Room3" to="." method="_on_room_3_door_5_entered"]
+[connection signal="door6_entered" from="Room4" to="." method="_on_room_4_door_6_entered"]
+[connection signal="door7_entered" from="Room4" to="." method="_on_room_4_door_7_entered"]
+[connection signal="door8_entered" from="Room4" to="." method="_on_room_4_door_8_entered"]
+[connection signal="door9_entered" from="Room4" to="." method="_on_room_4_door_9_entered"]
+[connection signal="door10_entered" from="Room5" to="." method="_on_room_5_door_10_entered"]

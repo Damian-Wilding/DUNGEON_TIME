@@ -12,6 +12,8 @@ var is_player_facing_down = false
 var is_player_facing_left = false
 var is_player_facing_right = false
 
+@export var keys = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -112,14 +114,17 @@ func _fireball_attack():
 	get_parent().add_child(fireball_1)
 	# Place the fireball where the player is.
 	fireball_1.position = player_position
-	# Set the fireball's velocity.
+	# Set the fireball's velocity and rotation.
 	if is_player_facing_up == true:
+		fireball_1.rotation += PI
 		fireball_1.velocity = Vector2(0, -1)
 	elif is_player_facing_down == true:
 		fireball_1.velocity = Vector2(0, 1)
 	elif is_player_facing_right == true:
+		fireball_1.rotation += 3 * PI/2
 		fireball_1.velocity = Vector2(1, 0)
 	elif is_player_facing_left == true:
+		fireball_1.rotation += PI/2
 		fireball_1.velocity = Vector2(-1, 0)
 	
 	# Create the second fireball.
@@ -127,34 +132,38 @@ func _fireball_attack():
 	get_parent().add_child(fireball_2)
 	# Place the fireball where the player is.
 	fireball_2.position = player_position
-	# Set the fireball's velocity.
+	# Set the fireball's velocity and rotation.
 	if is_player_facing_up == true:
-		fireball_2.velocity = Vector2(-1, -1)
+		fireball_2.rotation += 7 * PI/6
+		fireball_2.velocity = Vector2(0.5, -sqrt(3)/2)
 	elif is_player_facing_down == true:
-		fireball_2.velocity = Vector2(-1, 1)
+		fireball_2.rotation += PI/6
+		fireball_2.velocity = Vector2(-0.5, sqrt(3)/2)
 	elif is_player_facing_right == true:
-		fireball_2.velocity = Vector2(1, -1)
+		fireball_2.rotation += 10 * PI/6
+		fireball_2.velocity = Vector2(sqrt(3)/2, 0.5)
 	elif is_player_facing_left == true:
-		fireball_2.velocity = Vector2(-1, 1)
-	# Rotate the fireball.
-	fireball_2.rotation += PI/6
+		fireball_2.rotation += 4 * PI/6
+		fireball_2.velocity = Vector2(-sqrt(3)/2, -0.5)
 	
 	# Create the third fireball.
 	var fireball_3 = fireball.instantiate()
 	get_parent().add_child(fireball_3)
 	# Place the fireball where the player is.
 	fireball_3.position = player_position
-	# Set the fireball's velocity.
+	# Set the fireball's velocity and rotation.
 	if is_player_facing_up == true:
-		fireball_3.velocity = Vector2(0, -1)
+		fireball_3.rotation += 5 * PI/6
+		fireball_3.velocity = Vector2(-0.5, -sqrt(3)/2)
 	elif is_player_facing_down == true:
-		fireball_3.velocity = Vector2(0, 1)
+		fireball_3.rotation -= PI/6
+		fireball_3.velocity = Vector2(0.5, sqrt(3)/2)
 	elif is_player_facing_right == true:
-		fireball_3.velocity = Vector2(1, 0)
+		fireball_3.rotation += 8 * PI/6
+		fireball_3.velocity = Vector2(sqrt(3)/2, -0.5)
 	elif is_player_facing_left == true:
-		fireball_3.velocity = Vector2(-1, 0)
-	# Rotate the fireball.
-	fireball_3.rotation -= PI/6
+		fireball_3.rotation += 2 * PI/6
+		fireball_3.velocity = Vector2(-sqrt(3)/2, 0.5)
 	
 	
 	# Start the AttackTimer.

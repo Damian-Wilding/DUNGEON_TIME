@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6ofsnasd3pyu"]
+[gd_scene load_steps=9 format=3 uid="uid://c6ofsnasd3pyu"]
 
 [ext_resource type="Texture2D" uid="uid://bm76unc27hmjn" path="res://assets/sprites/test_sprites/test_room2.png" id="1_4mhbp"]
 [ext_resource type="Script" path="res://room_3.gd" id="1_5jrst"]
 [ext_resource type="FontFile" uid="uid://2wx5ii18ovn6" path="res://assets/fonts/PixelAzureBonds-327Z.ttf" id="3_drdrl"]
 [ext_resource type="PackedScene" uid="uid://dql7dlfkt24a2" path="res://fire_powerup.tscn" id="4_cqltw"]
+[ext_resource type="PackedScene" uid="uid://dqnqijaskwcm1" path="res://enemy.tscn" id="5_5bso3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01jal"]
 size = Vector2(437, 55)
@@ -85,6 +86,29 @@ vertical_alignment = 1
 
 [node name="FirePowerup" parent="." instance=ExtResource("4_cqltw")]
 position = Vector2(876, 299)
+
+[node name="UsePowerupMessage" type="Label" parent="."]
+offset_left = 76.0
+offset_top = 75.0
+offset_right = 412.0
+offset_bottom = 150.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("3_drdrl")
+text = "Try attacking the enemies 
+from a distance
+after you've got the powerup"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Enemy" parent="." instance=ExtResource("5_5bso3")]
+position = Vector2(178, 189)
+
+[node name="Enemy2" parent="." instance=ExtResource("5_5bso3")]
+position = Vector2(177, 353)
+
+[node name="Enemy3" parent="." instance=ExtResource("5_5bso3")]
+position = Vector2(181, 517)
 
 [connection signal="body_entered" from="Door5" to="." method="_on_door_5_body_entered"]
 [connection signal="body_entered" from="Door4" to="." method="_on_door_4_body_entered"]

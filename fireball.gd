@@ -20,3 +20,12 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
 
 
+# This is called when a hitbox enters the fireball's hitbox.
+func _on_area_entered(area):
+	# Check to see if the hitbox is an enemy.
+	# Check to see if the first 5 letters of the area's name is "Enemy"
+	if area.name.left(5) == "Enemy":
+		# Delete the enemy.
+		area.queue_free()
+		# Delete the fireball.
+		queue_free()
