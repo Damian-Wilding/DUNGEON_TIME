@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmnkc6086jjdt"]
+[gd_scene load_steps=10 format=3 uid="uid://dmnkc6086jjdt"]
 
+[ext_resource type="Script" path="res://room_6.gd" id="1_lkpgf"]
 [ext_resource type="Texture2D" uid="uid://ukjdtkoj31i5" path="res://assets/sprites/test_sprites/test_room6.png" id="1_thb76"]
 [ext_resource type="PackedScene" uid="uid://dqnqijaskwcm1" path="res://enemy.tscn" id="2_qc0b6"]
 [ext_resource type="FontFile" uid="uid://2wx5ii18ovn6" path="res://assets/fonts/PixelAzureBonds-327Z.ttf" id="3_rj0vw"]
+[ext_resource type="PackedScene" uid="uid://blol4lgjo3fsx" path="res://campfire.tscn" id="5_uwhhe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ud57o"]
 size = Vector2(579.5, 55)
@@ -13,7 +15,11 @@ size = Vector2(472, 55)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p8x76"]
 size = Vector2(186.25, 55)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjwyt"]
+size = Vector2(42.5, 123.5)
+
 [node name="Room6" type="Area2D"]
+script = ExtResource("1_lkpgf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
@@ -59,8 +65,19 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_p8x76")
 debug_color = Color(0.952941, 0, 0.290196, 0.419608)
 
+[node name="Label" type="Label" parent="."]
+offset_left = 709.0
+offset_top = 297.0
+offset_right = 779.0
+offset_bottom = 322.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_rj0vw")
+text = "rude..."
+
 [node name="Enemy" parent="." instance=ExtResource("2_qc0b6")]
-position = Vector2(748, 317)
+position = Vector2(729, 296)
+scale = Vector2(2, 2)
 
 [node name="LetHimCook" type="Label" parent="."]
 offset_left = 733.0
@@ -72,3 +89,15 @@ theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("3_rj0vw")
 theme_override_font_sizes/font_size = 19
 text = "Let him cook"
+
+[node name="Door11" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door11"]
+position = Vector2(93.75, 322.25)
+shape = SubResource("RectangleShape2D_qjwyt")
+debug_color = Color(0, 0.65098, 0.0392157, 0.419608)
+
+[node name="Campfire" parent="Door11" instance=ExtResource("5_uwhhe")]
+position = Vector2(700, 201)
+
+[connection signal="body_entered" from="Door11" to="." method="_on_door_11_body_entered"]

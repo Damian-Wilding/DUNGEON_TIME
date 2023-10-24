@@ -26,8 +26,8 @@ func _on_unlock_area_body_entered(body):
 		body.keys -= 1
 		# Remove the lock.
 		get_node("Lock").queue_free()
-		# Remove the unlock area since it is no loner needed.
-		queue_free()
+		# Remove the unlock area since it is no longer needed.
+		get_parent().remove_child($UnlockArea)
 
 
 # This is called when a body hitbox enters the Door6 hitbox.

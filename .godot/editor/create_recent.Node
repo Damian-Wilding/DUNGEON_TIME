@@ -1,11 +1,11 @@
+CollisionShape2D
+Area2D
 Label
 Sprite2D
-Area2D
-CollisionShape2D
 StaticBody2D
+AnimatedSprite2D
 VisibleOnScreenNotifier2D
 RigidBody2D
-AnimatedSprite2D
 Node
 Skeleton2D
 CharacterBody2D

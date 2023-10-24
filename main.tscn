@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxxh6hpo6cbk6"]
+[gd_scene load_steps=10 format=3 uid="uid://cxxh6hpo6cbk6"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_2fgkk"]
 [ext_resource type="PackedScene" uid="uid://cpxfrv8uvvuhw" path="res://room_1.tscn" id="2_shq6n"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c6ofsnasd3pyu" path="res://room_3.tscn" id="4_bck3q"]
 [ext_resource type="PackedScene" uid="uid://c51nxve14pqa5" path="res://room_4.tscn" id="5_t50an"]
 [ext_resource type="PackedScene" uid="uid://c8cdepublwl2q" path="res://room_5.tscn" id="6_ttyf8"]
+[ext_resource type="PackedScene" uid="uid://dmnkc6086jjdt" path="res://room_6.tscn" id="7_o6fgv"]
+[ext_resource type="PackedScene" uid="uid://bth5tqpokuxe2" path="res://room_7.tscn" id="8_ola1b"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_2fgkk")
@@ -25,6 +27,12 @@ position = Vector2(0, -1944)
 [node name="Room5" parent="." instance=ExtResource("6_ttyf8")]
 position = Vector2(-1152, -1944)
 
+[node name="Room6" parent="." instance=ExtResource("7_o6fgv")]
+position = Vector2(1152, -1944)
+
+[node name="Room7" parent="." instance=ExtResource("8_ola1b")]
+position = Vector2(0, -2592)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
 
@@ -41,3 +49,5 @@ position = Vector2(553, 535)
 [connection signal="door8_entered" from="Room4" to="." method="_on_room_4_door_8_entered"]
 [connection signal="door9_entered" from="Room4" to="." method="_on_room_4_door_9_entered"]
 [connection signal="door10_entered" from="Room5" to="." method="_on_room_5_door_10_entered"]
+[connection signal="door11_entered" from="Room6" to="." method="_on_room_6_door_11_entered"]
+[connection signal="door12_entered" from="Room7" to="." method="_on_room_7_door_12_entered"]

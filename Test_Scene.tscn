@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://4lhdkvlesk5d"]
+[gd_scene load_steps=7 format=3 uid="uid://4lhdkvlesk5d"]
 
 [ext_resource type="PackedScene" uid="uid://c0qx7fkeyqckq" path="res://Player.tscn" id="1_m7klh"]
 [ext_resource type="Script" path="res://Test_Scene.gd" id="1_p8lkt"]
 [ext_resource type="PackedScene" uid="uid://dqnqijaskwcm1" path="res://enemy.tscn" id="2_qe32p"]
 [ext_resource type="PackedScene" uid="uid://dql7dlfkt24a2" path="res://fire_powerup.tscn" id="4_xq1vc"]
+[ext_resource type="PackedScene" uid="uid://blol4lgjo3fsx" path="res://campfire.tscn" id="5_cw3lc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vcmww"]
 radius = 179.0
@@ -27,5 +28,8 @@ debug_color = Color(0.945098, 0, 0.168627, 0.419608)
 
 [node name="FirePowerup" parent="." instance=ExtResource("4_xq1vc")]
 position = Vector2(511, 420)
+
+[node name="Campfire" parent="." instance=ExtResource("5_cw3lc")]
+position = Vector2(449, 27)
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
