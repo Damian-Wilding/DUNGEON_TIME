@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://4lhdkvlesk5d"]
+[gd_scene load_steps=8 format=3 uid="uid://4lhdkvlesk5d"]
 
 [ext_resource type="PackedScene" uid="uid://c0qx7fkeyqckq" path="res://Player.tscn" id="1_m7klh"]
 [ext_resource type="Script" path="res://Test_Scene.gd" id="1_p8lkt"]
 [ext_resource type="PackedScene" uid="uid://dqnqijaskwcm1" path="res://enemy.tscn" id="2_qe32p"]
 [ext_resource type="PackedScene" uid="uid://dql7dlfkt24a2" path="res://fire_powerup.tscn" id="4_xq1vc"]
 [ext_resource type="PackedScene" uid="uid://blol4lgjo3fsx" path="res://campfire.tscn" id="5_cw3lc"]
+[ext_resource type="PackedScene" uid="uid://dkvklsucn0adp" path="res://stairs_1.tscn" id="6_r5wix"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vcmww"]
 radius = 179.0
@@ -12,6 +13,9 @@ height = 368.0
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_p8lkt")
+
+[node name="Stairs1" parent="." instance=ExtResource("6_r5wix")]
+position = Vector2(-105, -109)
 
 [node name="Enemy" parent="." instance=ExtResource("2_qe32p")]
 position = Vector2(344, 314)

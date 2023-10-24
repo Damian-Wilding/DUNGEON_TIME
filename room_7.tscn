@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bth5tqpokuxe2"]
+[gd_scene load_steps=9 format=3 uid="uid://bth5tqpokuxe2"]
 
 [ext_resource type="Script" path="res://room_7.gd" id="1_meypi"]
 [ext_resource type="Texture2D" uid="uid://doro7b3crnnhe" path="res://assets/sprites/test_sprites/test_room7.png" id="1_qesex"]
 [ext_resource type="FontFile" uid="uid://2wx5ii18ovn6" path="res://assets/fonts/PixelAzureBonds-327Z.ttf" id="2_r8jpg"]
+[ext_resource type="PackedScene" uid="uid://dkvklsucn0adp" path="res://stairs_1.tscn" id="4_sc4bp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7343k"]
 size = Vector2(642.5, 55)
@@ -65,8 +66,8 @@ offset_bottom = 119.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_r8jpg")
-theme_override_font_sizes/font_size = 24
-text = "Step on the platform to move on to the next floor"
+theme_override_font_sizes/font_size = 28
+text = "Use the stairs to go to the next floor"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -76,5 +77,8 @@ vertical_alignment = 1
 position = Vector2(554.5, 592.5)
 shape = SubResource("RectangleShape2D_qvow6")
 debug_color = Color(0.117647, 0.623529, 0, 0.419608)
+
+[node name="Stairs1" parent="." instance=ExtResource("4_sc4bp")]
+position = Vector2(112, 78)
 
 [connection signal="body_entered" from="Door12" to="." method="_on_door_12_body_entered"]
