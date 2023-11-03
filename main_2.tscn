@@ -1,6 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://chvg3ox1fgc5p"]
+[gd_scene load_steps=17 format=3 uid="uid://chvg3ox1fgc5p"]
 
+[ext_resource type="Script" path="res://FirstFloor.gd" id="1_j1isj"]
 [ext_resource type="Texture2D" uid="uid://eekmx01ok755" path="res://assets/sprites/test_sprites/rooms/test_full_floor.png" id="1_jqslk"]
+[ext_resource type="PackedScene" uid="uid://c0qx7fkeyqckq" path="res://Player.tscn" id="2_wbsnl"]
+[ext_resource type="PackedScene" uid="uid://blol4lgjo3fsx" path="res://campfire.tscn" id="3_ur330"]
+[ext_resource type="PackedScene" uid="uid://ckpobs07afjln" path="res://stairs.tscn" id="4_sroaa"]
+[ext_resource type="PackedScene" uid="uid://bx43digskdenw" path="res://slime.tscn" id="5_o1bkj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r60sc"]
 size = Vector2(5745, 61)
@@ -20,9 +25,22 @@ size = Vector2(947, 108)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0m60a"]
 size = Vector2(332.5, 108)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltig2"]
+size = Vector2(201, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrjvu"]
+size = Vector2(60.5, 118)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bl54x"]
+size = Vector2(201, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_va5wx"]
+size = Vector2(60.75, 118)
+
 [node name="Main2" type="Node"]
 
 [node name="FirstFloor" type="Area2D" parent="."]
+script = ExtResource("1_j1isj")
 
 [node name="Sprite2D" type="Sprite2D" parent="FirstFloor"]
 position = Vector2(576, 324)
@@ -31,341 +49,1006 @@ texture = ExtResource("1_jqslk")
 [node name="Walls" type="StaticBody2D" parent="FirstFloor"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(580, -1293)
 shape = SubResource("RectangleShape2D_r60sc")
 debug_color = Color(0.956863, 0, 0.0705882, 0.419608)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(579, 1903.5)
 shape = SubResource("RectangleShape2D_r60sc")
 debug_color = Color(0.956863, 0, 0.0705882, 0.419608)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-2235.5, 310.25)
 shape = SubResource("RectangleShape2D_pmylc")
 debug_color = Color(0.952941, 0, 0, 0.419608)
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(3377, 310.25)
 shape = SubResource("RectangleShape2D_pmylc")
 debug_color = Color(0.952941, 0, 0, 0.419608)
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-1157, -1139.25)
 shape = SubResource("RectangleShape2D_ukfpn")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D25" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-1157, -822.625)
 shape = SubResource("RectangleShape2D_ug4sq")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D26" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-5, -822.625)
 shape = SubResource("RectangleShape2D_ug4sq")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D27" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(1147, -822.625)
 shape = SubResource("RectangleShape2D_ug4sq")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D28" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(2299, -822.625)
 shape = SubResource("RectangleShape2D_ug4sq")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D29" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-1157, -174.625)
 shape = SubResource("RectangleShape2D_ug4sq")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D30" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-5, -174.625)
 shape = SubResource("RectangleShape2D_ug4sq")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D31" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(1147, -174.625)
 shape = SubResource("RectangleShape2D_ug4sq")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D32" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(2299, -174.625)
 shape = SubResource("RectangleShape2D_ug4sq")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D33" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-1157, 473.375)
 shape = SubResource("RectangleShape2D_ug4sq")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D34" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-5, 473.375)
 shape = SubResource("RectangleShape2D_ug4sq")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D35" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(1147, 473.375)
 shape = SubResource("RectangleShape2D_ug4sq")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D36" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(2299, 473.375)
 shape = SubResource("RectangleShape2D_ug4sq")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D37" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-1157, 1121.38)
 shape = SubResource("RectangleShape2D_ug4sq")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D38" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-5, 1121.38)
 shape = SubResource("RectangleShape2D_ug4sq")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D39" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(1147, 1121.38)
 shape = SubResource("RectangleShape2D_ug4sq")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D40" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(2299, 1121.38)
 shape = SubResource("RectangleShape2D_ug4sq")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D41" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-1157, 1769.38)
 shape = SubResource("RectangleShape2D_ug4sq")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D42" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-5, 1769.38)
 shape = SubResource("RectangleShape2D_ug4sq")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D43" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(1147, 1769.38)
 shape = SubResource("RectangleShape2D_ug4sq")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D44" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(2299, 1769.38)
 shape = SubResource("RectangleShape2D_ug4sq")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-1157, -491.25)
 shape = SubResource("RectangleShape2D_ukfpn")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-5, -491.25)
 shape = SubResource("RectangleShape2D_ukfpn")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(1147, -491.25)
 shape = SubResource("RectangleShape2D_ukfpn")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(2299, -491.25)
 shape = SubResource("RectangleShape2D_ukfpn")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-5, 156.75)
 shape = SubResource("RectangleShape2D_ukfpn")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(1147, 156.75)
 shape = SubResource("RectangleShape2D_ukfpn")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(2299, 156.75)
 shape = SubResource("RectangleShape2D_ukfpn")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-5, 804.75)
 shape = SubResource("RectangleShape2D_ukfpn")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(1147, 804.75)
 shape = SubResource("RectangleShape2D_ukfpn")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(2299, 804.75)
 shape = SubResource("RectangleShape2D_ukfpn")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D22" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-5, 1452.75)
 shape = SubResource("RectangleShape2D_ukfpn")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D23" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(1147, 1452.75)
 shape = SubResource("RectangleShape2D_ukfpn")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D24" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(2299, 1452.75)
 shape = SubResource("RectangleShape2D_ukfpn")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-1157, 156.75)
 shape = SubResource("RectangleShape2D_ukfpn")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-1157, 804.75)
 shape = SubResource("RectangleShape2D_ukfpn")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-1157, 1452.75)
 shape = SubResource("RectangleShape2D_ukfpn")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-5, -1139.25)
 shape = SubResource("RectangleShape2D_ukfpn")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(1147, -1139.25)
 shape = SubResource("RectangleShape2D_ukfpn")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(2299, -1139.25)
 shape = SubResource("RectangleShape2D_ukfpn")
 debug_color = Color(0.960784, 0, 0.0313726, 0.419608)
 
 [node name="CollisionShape2D45" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-1170.5, -667)
 shape = SubResource("RectangleShape2D_r6fbn")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D61" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-2015.75, -667)
 shape = SubResource("RectangleShape2D_0m60a")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D62" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-2015.75, -19)
 shape = SubResource("RectangleShape2D_0m60a")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D63" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-2015.75, 629)
 shape = SubResource("RectangleShape2D_0m60a")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D64" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-2015.75, 1277)
 shape = SubResource("RectangleShape2D_0m60a")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D65" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(3131, 1277)
 shape = SubResource("RectangleShape2D_0m60a")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D66" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(3131, 629)
 shape = SubResource("RectangleShape2D_0m60a")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D67" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(3131, -19)
 shape = SubResource("RectangleShape2D_0m60a")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D68" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(3131, -667)
 shape = SubResource("RectangleShape2D_0m60a")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D46" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-18.5, -667)
 shape = SubResource("RectangleShape2D_r6fbn")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D47" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(1133.5, -667)
 shape = SubResource("RectangleShape2D_r6fbn")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D48" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(2285.5, -667)
 shape = SubResource("RectangleShape2D_r6fbn")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D49" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-1170.5, -19)
 shape = SubResource("RectangleShape2D_r6fbn")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D50" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-18.5, -19)
 shape = SubResource("RectangleShape2D_r6fbn")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D51" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(1133.5, -19)
 shape = SubResource("RectangleShape2D_r6fbn")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D52" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(2285.5, -19)
 shape = SubResource("RectangleShape2D_r6fbn")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D53" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-1170.5, 629)
 shape = SubResource("RectangleShape2D_r6fbn")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D54" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-18.5, 629)
 shape = SubResource("RectangleShape2D_r6fbn")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D55" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(1133.5, 629)
 shape = SubResource("RectangleShape2D_r6fbn")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D56" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(2285.5, 629)
 shape = SubResource("RectangleShape2D_r6fbn")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D57" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-1170.5, 1277)
 shape = SubResource("RectangleShape2D_r6fbn")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D58" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(-18.5, 1277)
 shape = SubResource("RectangleShape2D_r6fbn")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D59" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(1133.5, 1277)
 shape = SubResource("RectangleShape2D_r6fbn")
 debug_color = Color(0.960784, 0, 0, 0.419608)
 
 [node name="CollisionShape2D60" type="CollisionShape2D" parent="FirstFloor/Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(2285.5, 1277)
 shape = SubResource("RectangleShape2D_r6fbn")
 debug_color = Color(0.960784, 0, 0, 0.419608)
+
+[node name="Campfire" parent="FirstFloor" instance=ExtResource("3_ur330")]
+position = Vector2(-315, -256)
+
+[node name="Campfire2" parent="FirstFloor" instance=ExtResource("3_ur330")]
+position = Vector2(1222, -256)
+
+[node name="Campfire3" parent="FirstFloor" instance=ExtResource("3_ur330")]
+position = Vector2(-315, 677)
+
+[node name="Campfire4" parent="FirstFloor" instance=ExtResource("3_ur330")]
+position = Vector2(1222, 677)
+
+[node name="UpperDoors" type="Area2D" parent="FirstFloor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FirstFloor/UpperDoors"]
+light_mask = 4
+position = Vector2(-1746.5, -632.5)
+shape = SubResource("RectangleShape2D_ltig2")
+debug_color = Color(0, 0.647059, 0.176471, 0.419608)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FirstFloor/UpperDoors"]
+light_mask = 4
+position = Vector2(-594.5, -632.5)
+shape = SubResource("RectangleShape2D_ltig2")
+debug_color = Color(0, 0.647059, 0.176471, 0.419608)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="FirstFloor/UpperDoors"]
+light_mask = 4
+position = Vector2(557.5, -632.5)
+shape = SubResource("RectangleShape2D_ltig2")
+debug_color = Color(0, 0.647059, 0.176471, 0.419608)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="FirstFloor/UpperDoors"]
+light_mask = 4
+position = Vector2(1709.5, -632.5)
+shape = SubResource("RectangleShape2D_ltig2")
+debug_color = Color(0, 0.647059, 0.176471, 0.419608)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="FirstFloor/UpperDoors"]
+light_mask = 4
+position = Vector2(2861.5, -632.5)
+shape = SubResource("RectangleShape2D_ltig2")
+debug_color = Color(0, 0.647059, 0.176471, 0.419608)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="FirstFloor/UpperDoors"]
+light_mask = 4
+position = Vector2(-1746.5, 15.5)
+shape = SubResource("RectangleShape2D_ltig2")
+debug_color = Color(0, 0.647059, 0.176471, 0.419608)
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="FirstFloor/UpperDoors"]
+light_mask = 4
+position = Vector2(-594.5, 15.5)
+shape = SubResource("RectangleShape2D_ltig2")
+debug_color = Color(0, 0.647059, 0.176471, 0.419608)
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="FirstFloor/UpperDoors"]
+light_mask = 4
+position = Vector2(557.5, 15.5)
+shape = SubResource("RectangleShape2D_ltig2")
+debug_color = Color(0, 0.647059, 0.176471, 0.419608)
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="FirstFloor/UpperDoors"]
+light_mask = 4
+position = Vector2(1709.5, 15.5)
+shape = SubResource("RectangleShape2D_ltig2")
+debug_color = Color(0, 0.647059, 0.176471, 0.419608)
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="FirstFloor/UpperDoors"]
+light_mask = 4
+position = Vector2(2861.5, 15.5)
+shape = SubResource("RectangleShape2D_ltig2")
+debug_color = Color(0, 0.647059, 0.176471, 0.419608)
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="FirstFloor/UpperDoors"]
+light_mask = 4
+position = Vector2(-1746.5, 663.5)
+shape = SubResource("RectangleShape2D_ltig2")
+debug_color = Color(0, 0.647059, 0.176471, 0.419608)
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="FirstFloor/UpperDoors"]
+light_mask = 4
+position = Vector2(-594.5, 663.5)
+shape = SubResource("RectangleShape2D_ltig2")
+debug_color = Color(0, 0.647059, 0.176471, 0.419608)
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="FirstFloor/UpperDoors"]
+light_mask = 4
+position = Vector2(557.5, 663.5)
+shape = SubResource("RectangleShape2D_ltig2")
+debug_color = Color(0, 0.647059, 0.176471, 0.419608)
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="FirstFloor/UpperDoors"]
+light_mask = 4
+position = Vector2(1709.5, 663.5)
+shape = SubResource("RectangleShape2D_ltig2")
+debug_color = Color(0, 0.647059, 0.176471, 0.419608)
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="FirstFloor/UpperDoors"]
+light_mask = 4
+position = Vector2(2861.5, 663.5)
+shape = SubResource("RectangleShape2D_ltig2")
+debug_color = Color(0, 0.647059, 0.176471, 0.419608)
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="FirstFloor/UpperDoors"]
+light_mask = 4
+position = Vector2(-1746.5, 1311.5)
+shape = SubResource("RectangleShape2D_ltig2")
+debug_color = Color(0, 0.647059, 0.176471, 0.419608)
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="FirstFloor/UpperDoors"]
+light_mask = 4
+position = Vector2(-594.5, 1311.5)
+shape = SubResource("RectangleShape2D_ltig2")
+debug_color = Color(0, 0.647059, 0.176471, 0.419608)
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="FirstFloor/UpperDoors"]
+light_mask = 4
+position = Vector2(557.5, 1311.5)
+shape = SubResource("RectangleShape2D_ltig2")
+debug_color = Color(0, 0.647059, 0.176471, 0.419608)
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="FirstFloor/UpperDoors"]
+light_mask = 4
+position = Vector2(1709.5, 1311.5)
+shape = SubResource("RectangleShape2D_ltig2")
+debug_color = Color(0, 0.647059, 0.176471, 0.419608)
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="FirstFloor/UpperDoors"]
+light_mask = 4
+position = Vector2(2861.5, 1311.5)
+shape = SubResource("RectangleShape2D_ltig2")
+debug_color = Color(0, 0.647059, 0.176471, 0.419608)
+
+[node name="RightDoors" type="Area2D" parent="FirstFloor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FirstFloor/RightDoors"]
+light_mask = 4
+position = Vector2(-1247.75, -972)
+shape = SubResource("RectangleShape2D_wrjvu")
+debug_color = Color(0.231373, 0.301961, 1, 0.419608)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FirstFloor/RightDoors"]
+light_mask = 4
+position = Vector2(-95.75, -972)
+shape = SubResource("RectangleShape2D_wrjvu")
+debug_color = Color(0.231373, 0.301961, 1, 0.419608)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="FirstFloor/RightDoors"]
+light_mask = 4
+position = Vector2(1056.25, -972)
+shape = SubResource("RectangleShape2D_wrjvu")
+debug_color = Color(0.231373, 0.301961, 1, 0.419608)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="FirstFloor/RightDoors"]
+light_mask = 4
+position = Vector2(2208.25, -972)
+shape = SubResource("RectangleShape2D_wrjvu")
+debug_color = Color(0.231373, 0.301961, 1, 0.419608)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="FirstFloor/RightDoors"]
+light_mask = 4
+position = Vector2(-1247.75, -324)
+shape = SubResource("RectangleShape2D_wrjvu")
+debug_color = Color(0.231373, 0.301961, 1, 0.419608)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="FirstFloor/RightDoors"]
+light_mask = 4
+position = Vector2(-95.75, -324)
+shape = SubResource("RectangleShape2D_wrjvu")
+debug_color = Color(0.231373, 0.301961, 1, 0.419608)
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="FirstFloor/RightDoors"]
+light_mask = 4
+position = Vector2(1056.25, -324)
+shape = SubResource("RectangleShape2D_wrjvu")
+debug_color = Color(0.231373, 0.301961, 1, 0.419608)
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="FirstFloor/RightDoors"]
+light_mask = 4
+position = Vector2(2208.25, -324)
+shape = SubResource("RectangleShape2D_wrjvu")
+debug_color = Color(0.231373, 0.301961, 1, 0.419608)
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="FirstFloor/RightDoors"]
+light_mask = 4
+position = Vector2(-1247.75, 324)
+shape = SubResource("RectangleShape2D_wrjvu")
+debug_color = Color(0.231373, 0.301961, 1, 0.419608)
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="FirstFloor/RightDoors"]
+light_mask = 4
+position = Vector2(-95.75, 324)
+shape = SubResource("RectangleShape2D_wrjvu")
+debug_color = Color(0.231373, 0.301961, 1, 0.419608)
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="FirstFloor/RightDoors"]
+light_mask = 4
+position = Vector2(1056.25, 324)
+shape = SubResource("RectangleShape2D_wrjvu")
+debug_color = Color(0.231373, 0.301961, 1, 0.419608)
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="FirstFloor/RightDoors"]
+light_mask = 4
+position = Vector2(2208.25, 324)
+shape = SubResource("RectangleShape2D_wrjvu")
+debug_color = Color(0.231373, 0.301961, 1, 0.419608)
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="FirstFloor/RightDoors"]
+light_mask = 4
+position = Vector2(-1247.75, 972)
+shape = SubResource("RectangleShape2D_wrjvu")
+debug_color = Color(0.231373, 0.301961, 1, 0.419608)
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="FirstFloor/RightDoors"]
+light_mask = 4
+position = Vector2(-95.75, 972)
+shape = SubResource("RectangleShape2D_wrjvu")
+debug_color = Color(0.231373, 0.301961, 1, 0.419608)
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="FirstFloor/RightDoors"]
+light_mask = 4
+position = Vector2(1056.25, 972)
+shape = SubResource("RectangleShape2D_wrjvu")
+debug_color = Color(0.231373, 0.301961, 1, 0.419608)
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="FirstFloor/RightDoors"]
+light_mask = 4
+position = Vector2(2208.25, 972)
+shape = SubResource("RectangleShape2D_wrjvu")
+debug_color = Color(0.231373, 0.301961, 1, 0.419608)
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="FirstFloor/RightDoors"]
+light_mask = 4
+position = Vector2(-1247.75, 1620)
+shape = SubResource("RectangleShape2D_wrjvu")
+debug_color = Color(0.231373, 0.301961, 1, 0.419608)
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="FirstFloor/RightDoors"]
+light_mask = 4
+position = Vector2(-95.75, 1620)
+shape = SubResource("RectangleShape2D_wrjvu")
+debug_color = Color(0.231373, 0.301961, 1, 0.419608)
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="FirstFloor/RightDoors"]
+light_mask = 4
+position = Vector2(1056.25, 1620)
+shape = SubResource("RectangleShape2D_wrjvu")
+debug_color = Color(0.231373, 0.301961, 1, 0.419608)
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="FirstFloor/RightDoors"]
+light_mask = 4
+position = Vector2(2208.25, 1620)
+shape = SubResource("RectangleShape2D_wrjvu")
+debug_color = Color(0.231373, 0.301961, 1, 0.419608)
+
+[node name="LowerDoors" type="Area2D" parent="FirstFloor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FirstFloor/LowerDoors"]
+light_mask = 4
+position = Vector2(-1746.5, -702)
+shape = SubResource("RectangleShape2D_bl54x")
+debug_color = Color(0.603922, 0.541176, 0, 0.419608)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FirstFloor/LowerDoors"]
+light_mask = 4
+position = Vector2(-594.5, -702)
+shape = SubResource("RectangleShape2D_bl54x")
+debug_color = Color(0.603922, 0.541176, 0, 0.419608)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="FirstFloor/LowerDoors"]
+light_mask = 4
+position = Vector2(557.5, -702)
+shape = SubResource("RectangleShape2D_bl54x")
+debug_color = Color(0.603922, 0.541176, 0, 0.419608)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="FirstFloor/LowerDoors"]
+light_mask = 4
+position = Vector2(1709.5, -702)
+shape = SubResource("RectangleShape2D_bl54x")
+debug_color = Color(0.603922, 0.541176, 0, 0.419608)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="FirstFloor/LowerDoors"]
+light_mask = 4
+position = Vector2(2861.5, -702)
+shape = SubResource("RectangleShape2D_bl54x")
+debug_color = Color(0.603922, 0.541176, 0, 0.419608)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="FirstFloor/LowerDoors"]
+light_mask = 4
+position = Vector2(-1746.5, -54)
+shape = SubResource("RectangleShape2D_bl54x")
+debug_color = Color(0.603922, 0.541176, 0, 0.419608)
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="FirstFloor/LowerDoors"]
+light_mask = 4
+position = Vector2(-594.5, -54)
+shape = SubResource("RectangleShape2D_bl54x")
+debug_color = Color(0.603922, 0.541176, 0, 0.419608)
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="FirstFloor/LowerDoors"]
+light_mask = 4
+position = Vector2(557.5, -54)
+shape = SubResource("RectangleShape2D_bl54x")
+debug_color = Color(0.603922, 0.541176, 0, 0.419608)
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="FirstFloor/LowerDoors"]
+light_mask = 4
+position = Vector2(1709.5, -54)
+shape = SubResource("RectangleShape2D_bl54x")
+debug_color = Color(0.603922, 0.541176, 0, 0.419608)
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="FirstFloor/LowerDoors"]
+light_mask = 4
+position = Vector2(2861.5, -54)
+shape = SubResource("RectangleShape2D_bl54x")
+debug_color = Color(0.603922, 0.541176, 0, 0.419608)
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="FirstFloor/LowerDoors"]
+light_mask = 4
+position = Vector2(-1746.5, 594)
+shape = SubResource("RectangleShape2D_bl54x")
+debug_color = Color(0.603922, 0.541176, 0, 0.419608)
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="FirstFloor/LowerDoors"]
+light_mask = 4
+position = Vector2(-594.5, 594)
+shape = SubResource("RectangleShape2D_bl54x")
+debug_color = Color(0.603922, 0.541176, 0, 0.419608)
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="FirstFloor/LowerDoors"]
+light_mask = 4
+position = Vector2(557.5, 594)
+shape = SubResource("RectangleShape2D_bl54x")
+debug_color = Color(0.603922, 0.541176, 0, 0.419608)
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="FirstFloor/LowerDoors"]
+light_mask = 4
+position = Vector2(1709.5, 594)
+shape = SubResource("RectangleShape2D_bl54x")
+debug_color = Color(0.603922, 0.541176, 0, 0.419608)
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="FirstFloor/LowerDoors"]
+light_mask = 4
+position = Vector2(2861.5, 594)
+shape = SubResource("RectangleShape2D_bl54x")
+debug_color = Color(0.603922, 0.541176, 0, 0.419608)
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="FirstFloor/LowerDoors"]
+light_mask = 4
+position = Vector2(-1746.5, 1242)
+shape = SubResource("RectangleShape2D_bl54x")
+debug_color = Color(0.603922, 0.541176, 0, 0.419608)
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="FirstFloor/LowerDoors"]
+light_mask = 4
+position = Vector2(-594.5, 1242)
+shape = SubResource("RectangleShape2D_bl54x")
+debug_color = Color(0.603922, 0.541176, 0, 0.419608)
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="FirstFloor/LowerDoors"]
+light_mask = 4
+position = Vector2(557.5, 1242)
+shape = SubResource("RectangleShape2D_bl54x")
+debug_color = Color(0.603922, 0.541176, 0, 0.419608)
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="FirstFloor/LowerDoors"]
+light_mask = 4
+position = Vector2(1709.5, 1242)
+shape = SubResource("RectangleShape2D_bl54x")
+debug_color = Color(0.603922, 0.541176, 0, 0.419608)
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="FirstFloor/LowerDoors"]
+light_mask = 4
+position = Vector2(2861.5, 1242)
+shape = SubResource("RectangleShape2D_bl54x")
+debug_color = Color(0.603922, 0.541176, 0, 0.419608)
+
+[node name="LeftDoors" type="Area2D" parent="FirstFloor"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FirstFloor/LeftDoors"]
+light_mask = 4
+position = Vector2(-1066.38, -972)
+shape = SubResource("RectangleShape2D_va5wx")
+debug_color = Color(0.686275, 0.00784314, 0.709804, 0.419608)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="FirstFloor/LeftDoors"]
+light_mask = 4
+position = Vector2(85.625, -972)
+shape = SubResource("RectangleShape2D_va5wx")
+debug_color = Color(0.686275, 0.00784314, 0.709804, 0.419608)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="FirstFloor/LeftDoors"]
+light_mask = 4
+position = Vector2(1237.63, -972)
+shape = SubResource("RectangleShape2D_va5wx")
+debug_color = Color(0.686275, 0.00784314, 0.709804, 0.419608)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="FirstFloor/LeftDoors"]
+light_mask = 4
+position = Vector2(2389.63, -972)
+shape = SubResource("RectangleShape2D_va5wx")
+debug_color = Color(0.686275, 0.00784314, 0.709804, 0.419608)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="FirstFloor/LeftDoors"]
+light_mask = 4
+position = Vector2(-1066.38, -324)
+shape = SubResource("RectangleShape2D_va5wx")
+debug_color = Color(0.686275, 0.00784314, 0.709804, 0.419608)
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="FirstFloor/LeftDoors"]
+light_mask = 4
+position = Vector2(85.625, -324)
+shape = SubResource("RectangleShape2D_va5wx")
+debug_color = Color(0.686275, 0.00784314, 0.709804, 0.419608)
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="FirstFloor/LeftDoors"]
+light_mask = 4
+position = Vector2(1237.63, -324)
+shape = SubResource("RectangleShape2D_va5wx")
+debug_color = Color(0.686275, 0.00784314, 0.709804, 0.419608)
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="FirstFloor/LeftDoors"]
+light_mask = 4
+position = Vector2(2389.63, -324)
+shape = SubResource("RectangleShape2D_va5wx")
+debug_color = Color(0.686275, 0.00784314, 0.709804, 0.419608)
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="FirstFloor/LeftDoors"]
+light_mask = 4
+position = Vector2(-1066.38, 324)
+shape = SubResource("RectangleShape2D_va5wx")
+debug_color = Color(0.686275, 0.00784314, 0.709804, 0.419608)
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="FirstFloor/LeftDoors"]
+light_mask = 4
+position = Vector2(85.625, 324)
+shape = SubResource("RectangleShape2D_va5wx")
+debug_color = Color(0.686275, 0.00784314, 0.709804, 0.419608)
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="FirstFloor/LeftDoors"]
+light_mask = 4
+position = Vector2(1237.63, 324)
+shape = SubResource("RectangleShape2D_va5wx")
+debug_color = Color(0.686275, 0.00784314, 0.709804, 0.419608)
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="FirstFloor/LeftDoors"]
+light_mask = 4
+position = Vector2(2389.63, 324)
+shape = SubResource("RectangleShape2D_va5wx")
+debug_color = Color(0.686275, 0.00784314, 0.709804, 0.419608)
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="FirstFloor/LeftDoors"]
+light_mask = 4
+position = Vector2(-1066.38, 972)
+shape = SubResource("RectangleShape2D_va5wx")
+debug_color = Color(0.686275, 0.00784314, 0.709804, 0.419608)
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="FirstFloor/LeftDoors"]
+light_mask = 4
+position = Vector2(85.625, 972)
+shape = SubResource("RectangleShape2D_va5wx")
+debug_color = Color(0.686275, 0.00784314, 0.709804, 0.419608)
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="FirstFloor/LeftDoors"]
+light_mask = 4
+position = Vector2(1237.63, 972)
+shape = SubResource("RectangleShape2D_va5wx")
+debug_color = Color(0.686275, 0.00784314, 0.709804, 0.419608)
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="FirstFloor/LeftDoors"]
+light_mask = 4
+position = Vector2(2389.63, 972)
+shape = SubResource("RectangleShape2D_va5wx")
+debug_color = Color(0.686275, 0.00784314, 0.709804, 0.419608)
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="FirstFloor/LeftDoors"]
+light_mask = 4
+position = Vector2(-1066.38, 1620)
+shape = SubResource("RectangleShape2D_va5wx")
+debug_color = Color(0.686275, 0.00784314, 0.709804, 0.419608)
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="FirstFloor/LeftDoors"]
+light_mask = 4
+position = Vector2(85.625, 1620)
+shape = SubResource("RectangleShape2D_va5wx")
+debug_color = Color(0.686275, 0.00784314, 0.709804, 0.419608)
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="FirstFloor/LeftDoors"]
+light_mask = 4
+position = Vector2(1237.63, 1620)
+shape = SubResource("RectangleShape2D_va5wx")
+debug_color = Color(0.686275, 0.00784314, 0.709804, 0.419608)
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="FirstFloor/LeftDoors"]
+light_mask = 4
+position = Vector2(2389.63, 1620)
+shape = SubResource("RectangleShape2D_va5wx")
+debug_color = Color(0.686275, 0.00784314, 0.709804, 0.419608)
+
+[node name="Stairs" parent="FirstFloor" instance=ExtResource("4_sroaa")]
+position = Vector2(294, 358)
+
+[node name="Enemies" type="Node" parent="FirstFloor"]
+
+[node name="Slime" parent="FirstFloor/Enemies" instance=ExtResource("5_o1bkj")]
+position = Vector2(396, -449)
+
+[node name="Slime2" parent="FirstFloor/Enemies" instance=ExtResource("5_o1bkj")]
+position = Vector2(-757, 212)
+
+[node name="Slime3" parent="FirstFloor/Enemies" instance=ExtResource("5_o1bkj")]
+position = Vector2(404, 856)
+
+[node name="Slime4" parent="FirstFloor/Enemies" instance=ExtResource("5_o1bkj")]
+position = Vector2(1563, 220)
+
+[node name="Player" parent="." instance=ExtResource("2_wbsnl")]
+position = Vector2(576, 324)
+metadata/_edit_group_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[connection signal="body_entered" from="FirstFloor/UpperDoors" to="FirstFloor" method="_on_upper_doors_body_entered"]
+[connection signal="body_entered" from="FirstFloor/RightDoors" to="FirstFloor" method="_on_right_doors_body_entered"]
+[connection signal="body_entered" from="FirstFloor/LowerDoors" to="FirstFloor" method="_on_lower_doors_body_entered"]
+[connection signal="body_entered" from="FirstFloor/LeftDoors" to="FirstFloor" method="_on_left_doors_body_entered"]

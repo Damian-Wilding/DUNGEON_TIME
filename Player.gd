@@ -1,14 +1,15 @@
 extends CharacterBody2D
 
 signal hit
-var speed = 500
+var speed = 350
 var screen_size
 var is_player_attacking = false
+var is_attack_hitbox_rotated = false
 @export var has_fireball_powerup = false
 var fireball = preload("res://fireball.tscn")
 
-var is_player_facing_up = true
-var is_player_facing_down = false
+var is_player_facing_up = false
+var is_player_facing_down = true
 var is_player_facing_left = false
 var is_player_facing_right = false
 
@@ -36,33 +37,28 @@ func _process(delta):
 		is_player_facing_down = false
 		is_player_facing_left = false
 		is_player_facing_right = false
-		if rotation != 0:
-			rotation = 0
+
 	elif Input.is_action_pressed("move_down"):
 		velocity.y += 1
 		is_player_facing_down = true
 		is_player_facing_up = false
 		is_player_facing_left = false
 		is_player_facing_right = false
-		if rotation != PI:
-			rotation = PI
+
 	elif Input.is_action_pressed("move_right"):
 		velocity.x += 1
 		is_player_facing_right = true
 		is_player_facing_down = false
 		is_player_facing_left = false
 		is_player_facing_up = false
-		if rotation != PI/2:
-			rotation = PI/2
+
 	elif Input.is_action_pressed("move_left"):
 		velocity.x -= 1
 		is_player_facing_left = true
 		is_player_facing_down = false
 		is_player_facing_up = false
 		is_player_facing_right = false
-		if rotation != 3 * PI/2:
-			rotation = 3 * PI/2
-	
+
 	
 	# Check to see if the player is attacking.
 	if is_player_attacking == false:
@@ -91,10 +87,30 @@ func _process(delta):
 
 # This is called when the player does a normal attack.
 func _normal_attack():
-	# Show the attack hitbox
+	# If the player is facing down then move the hitbox down and rotate it.
+	if is_player_facing_down == true:
+		$AttackHitboxParent/AnimatedSprite2D.flip_h = false
+		$AttackHitboxParent.rotation = 0
+	# If the player is facing up then move the hitbox up and rotate it.
+	if is_player_facing_up == true:
+		$AttackHitboxParent/AnimatedSprite2D.flip_h = true
+		$AttackHitboxParent.rotation = PI
+	# If the player is facing right then move the hitbox right and rotate it.
+	if is_player_facing_right == true:
+		$AttackHitboxParent/AnimatedSprite2D.flip_h = false
+		$AttackHitboxParent.rotation = -PI/2
+	# If the player is facing left then move the hitbox left and rotate it.
+	if is_player_facing_left == true:
+		$AttackHitboxParent/AnimatedSprite2D.flip_h = false
+		$AttackHitboxParent.rotation = PI/2
+		
+		
+	# Show the attack hitbox.
 	$AttackHitboxParent.show()
 	# Activate the attack hitbox.
 	$AttackHitboxParent/AttackHitbox.set_deferred("disabled", false)
+	# Play the attack animation.
+	$AttackHitboxParent/AnimatedSprite2D.play()
 	# Start the AttackTimer.
 	$AttackTimer.start()
 	# Start the AttackCooldownTimer.

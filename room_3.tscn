@@ -25,32 +25,44 @@ texture = ExtResource("1_4mhbp")
 [node name="Walls" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(226, 17.5)
 shape = SubResource("RectangleShape2D_01jal")
 debug_color = Color(0.952941, 0, 0.290196, 0.419608)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(881, 603)
 shape = SubResource("RectangleShape2D_01jal")
 debug_color = Color(0.952941, 0, 0.290196, 0.419608)
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(210.5, 603)
 shape = SubResource("RectangleShape2D_01jal")
 debug_color = Color(0.952941, 0, 0.290196, 0.419608)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(877, 17)
 shape = SubResource("RectangleShape2D_01jal")
 debug_color = Color(0.952941, 0, 0.290196, 0.419608)
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(89, 316)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_fs5i4")
 debug_color = Color(0.952941, 0, 0.290196, 0.419608)
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(1053, 316)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_fs5i4")
@@ -59,6 +71,7 @@ debug_color = Color(0.952941, 0, 0.290196, 0.419608)
 [node name="Door5" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door5"]
+light_mask = 4
 position = Vector2(548, 37)
 shape = SubResource("RectangleShape2D_1v8aq")
 debug_color = Color(0, 0.643137, 0.270588, 0.419608)
@@ -66,6 +79,7 @@ debug_color = Color(0, 0.643137, 0.270588, 0.419608)
 [node name="Door4" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door4"]
+light_mask = 4
 position = Vector2(547, 603)
 shape = SubResource("RectangleShape2D_1v8aq")
 debug_color = Color(0, 0.643137, 0.270588, 0.419608)

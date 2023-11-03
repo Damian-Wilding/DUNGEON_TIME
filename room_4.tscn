@@ -39,44 +39,60 @@ texture = ExtResource("1_3vhlw")
 [node name="Walls" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(225.75, 17)
 shape = SubResource("RectangleShape2D_swpab")
 debug_color = Color(0.952941, 0, 0.290196, 0.419608)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(881, 603)
 shape = SubResource("RectangleShape2D_swpab")
 debug_color = Color(0.952941, 0, 0.290196, 0.419608)
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(210.5, 603)
 shape = SubResource("RectangleShape2D_swpab")
 debug_color = Color(0.952941, 0, 0.290196, 0.419608)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(877, 17)
 shape = SubResource("RectangleShape2D_swpab")
 debug_color = Color(0.952941, 0, 0.290196, 0.419608)
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(89, 468)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_2ce11")
 debug_color = Color(0.952941, 0, 0.290196, 0.419608)
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(88, 181)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_2ce11")
 debug_color = Color(0.952941, 0, 0.290196, 0.419608)
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(1053, 468)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_0vbjg")
 debug_color = Color(0.952941, 0, 0.290196, 0.419608)
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Walls"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(1053, 181)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_0vbjg")
@@ -85,6 +101,7 @@ debug_color = Color(0.952941, 0, 0.290196, 0.419608)
 [node name="Door8" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door8"]
+light_mask = 4
 position = Vector2(554, 24.875)
 shape = SubResource("RectangleShape2D_tfst1")
 debug_color = Color(0, 0.643137, 0.270588, 0.419608)
@@ -92,6 +109,7 @@ debug_color = Color(0, 0.643137, 0.270588, 0.419608)
 [node name="Door6" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door6"]
+light_mask = 4
 position = Vector2(547, 603)
 shape = SubResource("RectangleShape2D_khuj2")
 debug_color = Color(0, 0.643137, 0.270588, 0.419608)
@@ -99,6 +117,7 @@ debug_color = Color(0, 0.643137, 0.270588, 0.419608)
 [node name="Door7" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door7"]
+light_mask = 4
 position = Vector2(85, 326.25)
 shape = SubResource("RectangleShape2D_36hxa")
 debug_color = Color(0, 0.647059, 0.192157, 0.419608)
@@ -106,6 +125,7 @@ debug_color = Color(0, 0.647059, 0.192157, 0.419608)
 [node name="Door9" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door9"]
+light_mask = 4
 position = Vector2(1057, 325)
 shape = SubResource("RectangleShape2D_36hxa")
 debug_color = Color(0, 0.647059, 0.192157, 0.419608)
@@ -113,6 +133,7 @@ debug_color = Color(0, 0.647059, 0.192157, 0.419608)
 [node name="UnlockArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UnlockArea"]
+light_mask = 256
 position = Vector2(551, 55.5)
 shape = SubResource("RectangleShape2D_gkgg8")
 debug_color = Color(0, 0.54902, 0.92549, 0.419608)
@@ -120,6 +141,8 @@ debug_color = Color(0, 0.54902, 0.92549, 0.419608)
 [node name="Lock" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lock"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(551.5, 24.5)
 shape = SubResource("RectangleShape2D_gvx5p")
 debug_color = Color(0.866667, 0.00784314, 0.85098, 0.419608)

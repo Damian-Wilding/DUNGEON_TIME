@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://6hpuhtk22oe3"]
+
+[ext_resource type="Script" path="res://enemy_parent.gd" id="1_pccjk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0fqnj"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"attacking_down",
+"speed": 7.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"attacking_left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"attacking_right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"attacking_up",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[node name="EnemyParent" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_pccjk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0fqnj")
+animation = &"attacking_down"
+
+[node name="EnemyBoundaryHitbox" type="CollisionShape2D" parent="."]
+light_mask = 16
+visibility_layer = 8
+
+[node name="IdleTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="MovingTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="EnemyHitboxParent" type="Area2D" parent="." groups=["Enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHitboxParent"]
+light_mask = 64
+visibility_layer = 131

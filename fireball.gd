@@ -22,10 +22,12 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 # This is called when a hitbox enters the fireball's hitbox.
 func _on_area_entered(area):
-	# Check to see if the hitbox is an enemy.
-	# Check to see if the first 5 letters of the area's name is "Enemy"
-	if area.name.left(5) == "Enemy":
+	# Check to see if the hitbox belongs to an enemy.
+	if area.is_in_group("Enemy") == true:
 		# Delete the enemy.
-		area.queue_free()
+		if area.get_parent().is_in_group("Enemy") == true:
+			area.get_parent().queue_free()
+		else:
+			area.queue_free()
 		# Delete the fireball.
 		queue_free()

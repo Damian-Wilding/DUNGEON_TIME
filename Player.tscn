@@ -1,20 +1,29 @@
-[gd_scene load_steps=11 format=3 uid="uid://c0qx7fkeyqckq"]
+[gd_scene load_steps=19 format=3 uid="uid://c0qx7fkeyqckq"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_vcgm3"]
-[ext_resource type="Texture2D" uid="uid://bpel383npkgw0" path="res://assets/sprites/test_sprites/test_player_down.png" id="2_7b0fk"]
-[ext_resource type="Texture2D" uid="uid://ccysj0ta2tclx" path="res://assets/sprites/test_sprites/test_player_left.png" id="3_h63w5"]
-[ext_resource type="Texture2D" uid="uid://du57nt503o4m2" path="res://assets/sprites/test_sprites/test_player_right.png" id="4_pcdyn"]
-[ext_resource type="Texture2D" uid="uid://c2if4d4b3j06j" path="res://assets/sprites/test_sprites/test_player_up.png" id="5_tk4nr"]
-[ext_resource type="Texture2D" uid="uid://c1rg7xyenpbjl" path="res://assets/sprites/test_sprites/test_attack.png" id="6_na75b"]
+[ext_resource type="Texture2D" uid="uid://dh6jy4xrw4bkx" path="res://assets/sprites/test_sprites/player/knight.png" id="2_kpw4f"]
+[ext_resource type="Texture2D" uid="uid://bv6jeepycm83y" path="res://assets/sprites/test_sprites/player/attack/test_attack_1.png" id="3_esybf"]
+[ext_resource type="Texture2D" uid="uid://q62wrfqpikfb" path="res://assets/sprites/test_sprites/player/attack/test_attack_2.png" id="4_ncupa"]
+[ext_resource type="Texture2D" uid="uid://b6tj7cobkx5qt" path="res://assets/sprites/test_sprites/player/attack/test_attack_3.png" id="5_w1e18"]
+[ext_resource type="Texture2D" uid="uid://c4ui27pypy0x8" path="res://assets/sprites/test_sprites/player/attack/test_attack_4.png" id="6_3u3ju"]
+[ext_resource type="Texture2D" uid="uid://dt38xrlkdg6ly" path="res://assets/sprites/test_sprites/player/attack/test_attack_5.png" id="7_agvrs"]
+[ext_resource type="Texture2D" uid="uid://4f2bu4kdhjip" path="res://assets/sprites/test_sprites/player/attack/test_attack_6.png" id="8_2um05"]
+[ext_resource type="Texture2D" uid="uid://dmmg65wdii8wo" path="res://assets/sprites/test_sprites/player/attack/test_attack_7.png" id="9_be52x"]
+[ext_resource type="Texture2D" uid="uid://dl55a15djiiql" path="res://assets/sprites/test_sprites/player/attack/test_attack_8.png" id="10_mk1hh"]
+[ext_resource type="Texture2D" uid="uid://dxx67sc748s0u" path="res://assets/sprites/test_sprites/player/attack/test_attack_9.png" id="11_p4jmb"]
+[ext_resource type="Texture2D" uid="uid://c5wn3mgssepky" path="res://assets/sprites/test_sprites/player/attack/test_attack_10.png" id="12_ypjty"]
+[ext_resource type="Texture2D" uid="uid://cp2i8mi0qxryn" path="res://assets/sprites/test_sprites/player/attack/test_attack_11.png" id="13_jsmkf"]
+[ext_resource type="Texture2D" uid="uid://brkrych4eif8h" path="res://assets/sprites/test_sprites/player/attack/test_attack_full_13.png" id="14_s4oi4"]
+[ext_resource type="Texture2D" uid="uid://dcbetqmdb15ft" path="res://assets/sprites/test_sprites/player/attack/test_attack_12.png" id="15_e0qoa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7pcjp"]
-size = Vector2(50, 50)
+size = Vector2(32, 106)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1ogso"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_7b0fk")
+"texture": ExtResource("2_kpw4f")
 }],
 "loop": true,
 "name": &"down",
@@ -22,7 +31,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_h63w5")
+"texture": ExtResource("2_kpw4f")
 }],
 "loop": true,
 "name": &"left",
@@ -30,7 +39,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_pcdyn")
+"texture": ExtResource("2_kpw4f")
 }],
 "loop": true,
 "name": &"right",
@@ -38,59 +47,94 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_tk4nr")
+"texture": ExtResource("2_kpw4f")
 }],
 "loop": true,
 "name": &"up",
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vlt30"]
-radius = 13.0
-height = 62.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_h718t"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_thmjt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_na75b")
+"texture": ExtResource("9_be52x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_esybf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ncupa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_w1e18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3u3ju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_agvrs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2um05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mk1hh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_p4jmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ypjty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jsmkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_s4oi4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_e0qoa")
 }],
-"loop": true,
-"name": &"attack",
-"speed": 5.0
+"loop": false,
+"name": &"default",
+"speed": 50.0
 }]
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
-position = Vector2(444, 185)
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+position = Vector2(457, 157)
 script = ExtResource("1_vcgm3")
-metadata/_edit_group_ = true
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="."]
+visibility_layer = 493
+position = Vector2(11, 2)
 shape = SubResource("RectangleShape2D_7pcjp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_1ogso")
 animation = &"up"
 
 [node name="AttackHitboxParent" type="Area2D" parent="."]
+position = Vector2(11, 2)
 
-[node name="AttackHitbox" type="CollisionShape2D" parent="AttackHitboxParent"]
-position = Vector2(0, -40)
-rotation = 1.57056
-shape = SubResource("CapsuleShape2D_vlt30")
-debug_color = Color(0.705882, 0.266667, 1, 0.419608)
+[node name="AttackHitbox" type="CollisionPolygon2D" parent="AttackHitboxParent"]
+light_mask = 2
+visibility_layer = 64
+position = Vector2(0, -26)
+scale = Vector2(2, 2)
+polygon = PackedVector2Array(-2, 40.5, 10, 40.5, 11.5, 25.5, 12, -2, 25, -5, 48, -12, 56, -13.5, 62.5, -18.5, 65.5, -9.5, 66.5, 2.5, 65.5, 17.5, 62, 30, 53.5, 45, 45, 54, 34, 63, 15, 71, 0, 73, -20, 71, -40.5, 61, -55, 47, -66, 26, -69, 8, -68, -9.5, -65, -19.5, -56.5, -15.5, -52.5, -14.5, -49, -13.5, -33, -9, -26, -5.5, -23, 9, -13.5, 22.5, -10, 40)
 
-[node name="AttackSprite" type="AnimatedSprite2D" parent="AttackHitboxParent"]
-position = Vector2(0.500013, -41.25)
-scale = Vector2(0.786667, 1.18)
-sprite_frames = SubResource("SpriteFrames_h718t")
-animation = &"attack"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AttackHitboxParent"]
+position = Vector2(-2, 26)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_thmjt")
 
 [node name="AttackCooldownTimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="AttackTimer" type="Timer" parent="."]
-wait_time = 0.15
+wait_time = 0.3
 one_shot = true
 
 [connection signal="body_entered" from="AttackHitboxParent" to="." method="_on_hitbox_parent_body_entered"]

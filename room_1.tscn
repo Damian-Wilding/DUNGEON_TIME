@@ -64,6 +64,7 @@ horizontal_alignment = 1
 [node name="Door1Parent" type="Area2D" parent="."]
 
 [node name="Door1" type="CollisionShape2D" parent="Door1Parent"]
+light_mask = 4
 position = Vector2(550.5, 54)
 shape = SubResource("RectangleShape2D_7gkdh")
 debug_color = Color(0, 0.647059, 0.188235, 0.419608)
@@ -71,28 +72,38 @@ debug_color = Color(0, 0.647059, 0.188235, 0.419608)
 [node name="PlayerBoundaries" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="PlayerBoundaries"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(575.25, 613)
 shape = SubResource("RectangleShape2D_266qw")
 debug_color = Color(0.972549, 0.0666667, 0.392157, 0.419608)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(230.5, 11)
 shape = SubResource("RectangleShape2D_y4l23")
 debug_color = Color(0.972549, 0.0666667, 0.392157, 0.419608)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayerBoundaries"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(81, 314)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_w0m4x")
 debug_color = Color(0.972549, 0.0666667, 0.392157, 0.419608)
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="PlayerBoundaries"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(1062, 322)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_w0m4x")
 debug_color = Color(0.972549, 0.0666667, 0.392157, 0.419608)
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="PlayerBoundaries"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(874, 10)
 shape = SubResource("RectangleShape2D_y4l23")
 debug_color = Color(0.972549, 0.0666667, 0.392157, 0.419608)

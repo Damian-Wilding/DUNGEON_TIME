@@ -15,11 +15,5 @@ func _process(delta):
 func _on_body_entered(body):
 	# Check to see if the hitbox belongs to the player.
 	if body.name == "Player":
-		# Delete all the rooms in the main scene
-		get_parent().get_parent().remove_child($Room1)
-		get_parent().get_parent().remove_child($Room2)
-		get_parent().get_parent().remove_child($Room3)
-		get_parent().get_parent().remove_child($Room4)
-		get_parent().get_parent().remove_child($Room5)
-		get_parent().get_parent().remove_child($Room6)
-		get_parent().get_parent().remove_child($Room7)
+		# Change scene to Main2.
+		get_tree().change_scene_to_file("res://main_2.tscn")

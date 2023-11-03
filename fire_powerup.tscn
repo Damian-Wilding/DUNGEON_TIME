@@ -16,6 +16,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("1_w1e52")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 256
 position = Vector2(0.499939, 0.5)
 shape = SubResource("CapsuleShape2D_4mumm")
 debug_color = Color(0.588235, 0.552941, 0, 0.419608)

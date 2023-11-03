@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://4lhdkvlesk5d"]
+[gd_scene load_steps=9 format=3 uid="uid://4lhdkvlesk5d"]
 
 [ext_resource type="PackedScene" uid="uid://c0qx7fkeyqckq" path="res://Player.tscn" id="1_m7klh"]
 [ext_resource type="Script" path="res://Test_Scene.gd" id="1_p8lkt"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dql7dlfkt24a2" path="res://fire_powerup.tscn" id="4_xq1vc"]
 [ext_resource type="PackedScene" uid="uid://blol4lgjo3fsx" path="res://campfire.tscn" id="5_cw3lc"]
 [ext_resource type="PackedScene" uid="uid://dkvklsucn0adp" path="res://stairs_1.tscn" id="6_r5wix"]
+[ext_resource type="PackedScene" uid="uid://bx43digskdenw" path="res://slime.tscn" id="7_epohg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vcmww"]
 radius = 179.0
@@ -26,6 +27,8 @@ position = Vector2(506, 275)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+light_mask = 8
+visibility_layer = 17
 position = Vector2(792, 270)
 shape = SubResource("CapsuleShape2D_vcmww")
 debug_color = Color(0.945098, 0, 0.168627, 0.419608)
@@ -35,5 +38,8 @@ position = Vector2(511, 420)
 
 [node name="Campfire" parent="." instance=ExtResource("5_cw3lc")]
 position = Vector2(449, 27)
+
+[node name="Slime" parent="." instance=ExtResource("7_epohg")]
+position = Vector2(105, 269)
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]

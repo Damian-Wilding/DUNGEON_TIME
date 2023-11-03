@@ -25,6 +25,8 @@ script = ExtResource("1_2ws7f")
 sprite_frames = SubResource("SpriteFrames_lwt2k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 130
+visibility_layer = 64
 shape = SubResource("CapsuleShape2D_ci0ij")
 debug_color = Color(0.67451, 0.627451, 0.0392157, 0.419608)
 

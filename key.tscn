@@ -15,6 +15,7 @@ script = ExtResource("1_s5cfd")
 texture = ExtResource("1_ok7d6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 256
 position = Vector2(-1, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_fktym")
