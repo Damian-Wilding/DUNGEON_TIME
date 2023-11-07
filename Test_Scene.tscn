@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://4lhdkvlesk5d"]
+[gd_scene load_steps=11 format=3 uid="uid://4lhdkvlesk5d"]
 
 [ext_resource type="PackedScene" uid="uid://c0qx7fkeyqckq" path="res://Player.tscn" id="1_m7klh"]
 [ext_resource type="Script" path="res://Test_Scene.gd" id="1_p8lkt"]
 [ext_resource type="PackedScene" uid="uid://dqnqijaskwcm1" path="res://enemy.tscn" id="2_qe32p"]
+[ext_resource type="Texture2D" uid="uid://bka4by2s187fv" path="res://assets/sprites/test_sprites/test_room1.png" id="2_y00py"]
 [ext_resource type="PackedScene" uid="uid://dql7dlfkt24a2" path="res://fire_powerup.tscn" id="4_xq1vc"]
 [ext_resource type="PackedScene" uid="uid://blol4lgjo3fsx" path="res://campfire.tscn" id="5_cw3lc"]
 [ext_resource type="PackedScene" uid="uid://dkvklsucn0adp" path="res://stairs_1.tscn" id="6_r5wix"]
 [ext_resource type="PackedScene" uid="uid://bx43digskdenw" path="res://slime.tscn" id="7_epohg"]
+[ext_resource type="Texture2D" uid="uid://dk1h3pbv2pdfo" path="res://assets/sprites/test_sprites/size_references.png" id="9_f284u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vcmww"]
 radius = 179.0
@@ -15,31 +17,40 @@ height = 368.0
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_p8lkt")
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("2_y00py")
+metadata/_edit_lock_ = true
+
 [node name="Stairs1" parent="." instance=ExtResource("6_r5wix")]
-position = Vector2(-105, -109)
+position = Vector2(-242, 245)
 
 [node name="Enemy" parent="." instance=ExtResource("2_qe32p")]
-position = Vector2(344, 314)
+position = Vector2(810, 149)
 
 [node name="Player" parent="." instance=ExtResource("1_m7klh")]
-position = Vector2(506, 275)
+position = Vector2(866, 446)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 light_mask = 8
 visibility_layer = 17
-position = Vector2(792, 270)
+position = Vector2(1148, 3)
 shape = SubResource("CapsuleShape2D_vcmww")
 debug_color = Color(0.945098, 0, 0.168627, 0.419608)
 
 [node name="FirePowerup" parent="." instance=ExtResource("4_xq1vc")]
-position = Vector2(511, 420)
+position = Vector2(506, 296)
 
 [node name="Campfire" parent="." instance=ExtResource("5_cw3lc")]
 position = Vector2(449, 27)
 
 [node name="Slime" parent="." instance=ExtResource("7_epohg")]
-position = Vector2(105, 269)
+position = Vector2(184, 100)
+
+[node name="SizeReferences" type="Sprite2D" parent="."]
+position = Vector2(690, 192)
+texture = ExtResource("9_f284u")
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
