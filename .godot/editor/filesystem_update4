@@ -1,7 +1,7 @@
-res://Test_Scene.tscn
-res://enemy.gd
-res://fire_powerup.tscn
-res://enemy_parent.tscn
-res://main_2.tscn
 res://slime.tscn
-res://fire_powerup.gd
+res://enemy.gd
+res://Slime.gd
+res://enemy_parent.tscn
+res://Test_Scene.tscn
+res://main_2.tscn
+res://fire_powerup.tscn

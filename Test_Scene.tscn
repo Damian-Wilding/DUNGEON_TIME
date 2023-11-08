@@ -47,7 +47,7 @@ position = Vector2(506, 296)
 position = Vector2(449, 27)
 
 [node name="Slime" parent="." instance=ExtResource("7_epohg")]
-position = Vector2(184, 100)
+position = Vector2(499, 40)
 
 [node name="SizeReferences" type="Sprite2D" parent="."]
 position = Vector2(690, 192)
