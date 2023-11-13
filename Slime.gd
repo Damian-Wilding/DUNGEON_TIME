@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var speed = 100
+@export var hp = 3
 @export var random_direction = randi_range(0, 4)
 @export var seconds_to_idle = 1
 @export var seconds_to_move = 1
@@ -24,6 +25,8 @@ func _ready():
 	$IdleTimer.start()
 	# Play the enemies idle animation.
 	$AnimatedSprite2D.play("idle")
+	# Set the enemy's hp.
+	hp = 3
 	# Set the enemy's boundaries if they have them.
 	if can_leave_room == false:
 		x_position = get_position().x
@@ -71,7 +74,17 @@ func _process(delta):
 		velocity = velocity * speed
 		move_and_collide(velocity * delta)
 		
-	
+
+# This will be called when the enemy takes damage.
+func _take_damage():
+	# Check that the enemy has more than 1 hp.
+	if hp > 1:
+		hp -= 1
+	else:
+		# If the enemy has 1 hp or less, then they need to be killed (deleted).
+		queue_free()
+
+
 # This is called when the ememy's movement timer finishes.
 func _on_moving_timer_timeout():
 	# Set the enemy to be idle.
@@ -106,8 +119,8 @@ func _on_slime_hitbox_parent_body_entered(body):
 	if body.name == "Player":
 		# Delete the player.
 		body.queue_free()
-		# Delete this enemy.
-		queue_free()
+		# Have the enemy take damage.
+		_take_damage()
 
 
 # This is called when an Area2D hitbox enters the enemy's hitbox

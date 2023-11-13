@@ -27,10 +27,10 @@ func _move_player_to_right():
 	$Player.position = Vector2(1152 - 150, 648/2)
 # Move the player through a door on the top side of the room.
 func _move_player_through_upper_door():
-	$Player.position.y -= 200
+	$Player.position.y -= 240
 # Move the player through a door on the bottom side of the room.
 func _move_player_through_lower_door():
-	$Player.position.y += 200
+	$Player.position.y += 240
 # Move the player through a door on the right side of the room.
 func _move_player_through_right_door():
 	$Player.position.x += 400

@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 signal hit
 var speed = 350
+var hp
 var screen_size
 var is_player_attacking = false
 var is_attack_hitbox_rotated = false
@@ -23,6 +24,8 @@ func _ready():
 	$AttackHitboxParent.hide()
 	# Disable the player's attack hitbox.
 	$AttackHitboxParent/AttackHitbox.set_deferred("disabled", true)
+	# Give the player 5 hp.
+	hp = 5
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -19,7 +19,7 @@ script = ExtResource("1_2fgkk")
 position = Vector2(0, -648)
 
 [node name="Room3" parent="." instance=ExtResource("4_bck3q")]
-position = Vector2(0, -1296)
+position = Vector2(-4, -1292)
 
 [node name="Room4" parent="." instance=ExtResource("5_t50an")]
 position = Vector2(0, -1944)
@@ -37,7 +37,7 @@ position = Vector2(0, -2592)
 position = Vector2(576, 324)
 
 [node name="Player" parent="." instance=ExtResource("3_khukx")]
-position = Vector2(553, 535)
+position = Vector2(551, 476)
 
 [connection signal="door1_entered" from="Room1" to="." method="_on_room_1_door_1_entered"]
 [connection signal="door2_entered" from="Room2" to="." method="_on_room_2_door_2_entered"]
