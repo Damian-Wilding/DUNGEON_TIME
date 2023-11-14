@@ -1,0 +1,125 @@
+[gd_scene load_steps=11 format=3 uid="uid://c0r038ujbykuf"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_e84kp"]
+[ext_resource type="Texture2D" uid="uid://d33nwx0acsre" path="res://assets/sprites/test_sprites/health_bar/base health sprites/0hearts.png" id="1_ielq0"]
+[ext_resource type="Texture2D" uid="uid://bsn3173f61ekl" path="res://assets/sprites/test_sprites/health_bar/base health sprites/1hearts.png" id="2_f2r8w"]
+[ext_resource type="Texture2D" uid="uid://dkn7g1rgoc2m7" path="res://assets/sprites/test_sprites/health_bar/base health sprites/2hearts.png" id="3_w5iji"]
+[ext_resource type="Texture2D" uid="uid://bs4loil5wlhx4" path="res://assets/sprites/test_sprites/health_bar/base health sprites/3hearts.png" id="4_xee3u"]
+[ext_resource type="Texture2D" uid="uid://fvs8tdc2ccuq" path="res://assets/sprites/test_sprites/health_bar/base health sprites/4hearts.png" id="5_0up5p"]
+[ext_resource type="Texture2D" uid="uid://c12fak85pl377" path="res://assets/sprites/test_sprites/health_bar/base health sprites/5hearts.png" id="6_gsf04"]
+[ext_resource type="Texture2D" uid="uid://dilrii7y58gi0" path="res://assets/sprites/test_sprites/health_bar/base health sprites/6hearts.png" id="7_cxoh1"]
+[ext_resource type="Texture2D" uid="uid://brjl740kks271" path="res://assets/sprites/test_sprites/health_bar/base health sprites/7hearts.png" id="8_vswgp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t5yoc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ielq0")
+}],
+"loop": true,
+"name": &"0 hearts",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f2r8w")
+}],
+"loop": true,
+"name": &"1 hearts",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_w5iji")
+}],
+"loop": true,
+"name": &"2 hearts",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xee3u")
+}],
+"loop": true,
+"name": &"3 hearts",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0up5p")
+}],
+"loop": true,
+"name": &"4 hearts",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_gsf04")
+}],
+"loop": true,
+"name": &"5 hearts",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_cxoh1")
+}],
+"loop": true,
+"name": &"6 hearts",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_vswgp")
+}],
+"loop": true,
+"name": &"7 hearts",
+"speed": 1.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"losing 1st heart",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"losing 2nd heart",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"losing 3rd heart",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"losing 4th heart",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"losing 5th heart",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"losing 6th heart",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"losing 7th heart",
+"speed": 5.0
+}]
+
+[node name="HUD" type="Node"]
+script = ExtResource("1_e84kp")
+
+[node name="HealthBar" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HealthBar"]
+position = Vector2(240.5, 617.5)
+scale = Vector2(1.02778, 1.22)
+sprite_frames = SubResource("SpriteFrames_t5yoc")
+animation = &"7 hearts"
+frame_progress = 0.121752

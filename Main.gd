@@ -25,6 +25,8 @@ func _move_player_to_left():
 # Move the player to the right side of the screen.	
 func _move_player_to_right():
 	$Player.position = Vector2(1152 - 150, 648/2)
+	
+	
 # Move the player through a door on the top side of the room.
 func _move_player_through_upper_door():
 	$Player.position.y -= 200
@@ -58,6 +60,8 @@ func _deactivate_room(room):
 	# Deactivate room.
 	room.hide()
 	room.set_deferred("disabled", true)
+	
+	
 # This function is called to activate a room.
 func _activate_room(room):
 	# Activate room.
