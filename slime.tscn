@@ -347,8 +347,8 @@ sprite_frames = SubResource("SpriteFrames_0bqnj")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-light_mask = 8
-visibility_layer = 16
+light_mask = 16
+visibility_layer = 8
 position = Vector2(0, -1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_4l0rk")

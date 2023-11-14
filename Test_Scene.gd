@@ -11,7 +11,8 @@ func _process(delta):
 	pass
 	
 
-# This is called if the "player has been hit" signal has been emitted.
-func _on_player_hit():
-	# Kill (delete) the player.
-	$Player.queue_free()
+
+
+
+func _on_player_gameover():
+	get_tree().reload_current_scene()

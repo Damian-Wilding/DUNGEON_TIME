@@ -106,7 +106,7 @@ position = Vector2(457, 157)
 script = ExtResource("1_vcgm3")
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="."]
-visibility_layer = 493
+visibility_layer = 492
 position = Vector2(11, 2)
 shape = SubResource("RectangleShape2D_7pcjp")
 
@@ -137,6 +137,14 @@ one_shot = true
 wait_time = 0.3
 one_shot = true
 
+[node name="CollisionWithEnemiesHitboxParent" type="Area2D" parent="." groups=["Player"]]
+
+[node name="CollisionWithEnemiesHitbox" type="CollisionShape2D" parent="CollisionWithEnemiesHitboxParent"]
+visibility_layer = 492
+position = Vector2(11, 2)
+shape = SubResource("RectangleShape2D_7pcjp")
+
 [connection signal="body_entered" from="AttackHitboxParent" to="." method="_on_hitbox_parent_body_entered"]
 [connection signal="timeout" from="AttackCooldownTimer" to="." method="_on_attack_cooldown_timer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="body_entered" from="CollisionWithEnemiesHitboxParent" to="." method="_on_collision_with_enemies_hitbox_parent_body_entered"]

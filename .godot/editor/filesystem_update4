@@ -10,3 +10,5 @@ res://room_3.tscn
 res://room_4.tscn
 res://Player.gd
 res://Slime.gd
+res://Player.tscn
+res://Test_Scene.gd

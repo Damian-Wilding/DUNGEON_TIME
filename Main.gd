@@ -207,3 +207,9 @@ func _on_room_7_door_12_entered():
 	# Move the Player and Camera to be in Room4.
 	_move_camera_down()
 	_move_player_through_lower_door()
+
+
+# This is called when the player gets a game over during this scene.
+func _on_player_gameover():
+	# Reload the current scene. This lets the player start over at the beginning.
+	get_tree().reload_current_scene()

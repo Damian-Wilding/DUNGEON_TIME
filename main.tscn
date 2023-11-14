@@ -51,3 +51,4 @@ position = Vector2(551, 476)
 [connection signal="door10_entered" from="Room5" to="." method="_on_room_5_door_10_entered"]
 [connection signal="door11_entered" from="Room6" to="." method="_on_room_6_door_11_entered"]
 [connection signal="door12_entered" from="Room7" to="." method="_on_room_7_door_12_entered"]
+[connection signal="gameover" from="Player" to="." method="_on_player_gameover"]

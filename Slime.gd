@@ -79,7 +79,9 @@ func _process(delta):
 func _take_damage():
 	# Check that the enemy has more than 1 hp.
 	if hp > 1:
+		# Lowers the enemy's hp by 1.
 		hp -= 1
+		print("Enemy - damage taken")
 	else:
 		# If the enemy has 1 hp or less, then they need to be killed (deleted).
 		queue_free()
@@ -117,8 +119,6 @@ func _on_idle_timer_timeout():
 func _on_slime_hitbox_parent_body_entered(body):
 	# Check to see if the body is the player's body. (If it's not, then we don't care.)
 	if body.name == "Player":
-		# Delete the player.
-		body.queue_free()
 		# Have the enemy take damage.
 		_take_damage()
 
@@ -127,5 +127,5 @@ func _on_slime_hitbox_parent_body_entered(body):
 func _on_slime_hitbox_parent_area_entered(area):
 	# Check to see if the Area2D is the player's AttackHitbox.
 	if area.name == "AttackHitboxParent":
-		# Delete this enemy.
-		queue_free()
+		# Have the enemy take damage.
+		_take_damage()
