@@ -1,9 +1,7 @@
 extends CharacterBody2D
 
 signal hit
-signal gameover
 var speed = 350
-var hp
 var screen_size
 var is_player_attacking = false
 var is_attack_hitbox_rotated = false
@@ -25,8 +23,6 @@ func _ready():
 	$AttackHitboxParent.hide()
 	# Disable the player's attack hitbox.
 	$AttackHitboxParent/AttackHitbox.set_deferred("disabled", true)
-	# Give the player 5 hp.
-	hp = 5
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -194,20 +190,6 @@ func _fireball_attack():
 	is_player_attacking = true
 
 
-# This is called when the player takes damage.
-func _take_damage():
-	# Check that the player has more than 1 hp.
-	if hp > 1:
-		# Lowers the player's hp by 1.
-		hp -= 1
-		print("Player - damage taken ")
-	else:
-		# If the enemy has 1 hp or less, then the player needs to be killed (deleted).
-		queue_free()
-		# Let the main scene know that it's time to initiate gameover protocol.
-		gameover.emit()
-
-
 # This is called when the player's attack timer runs out.
 func _on_attack_timer_timeout():
 	# Hide the attack hitbox since the players attack has ended.
@@ -220,11 +202,3 @@ func _on_attack_timer_timeout():
 func _on_attack_cooldown_timer_timeout():
 	# Tell the game that the player is no longer attacking.
 	is_player_attacking = false
-
-
-# This is called when the player collides with a body hitbox.
-func _on_collision_with_enemies_hitbox_parent_body_entered(body):
-	# Check to see if the hitbox belongs to an enemy or not.
-	if body.is_in_group("Enemy"):
-		# Have the player take damage.
-		_take_damage()

@@ -28,12 +28,6 @@ position = Vector2(-242, 245)
 [node name="Enemy" parent="." instance=ExtResource("2_qe32p")]
 position = Vector2(810, 149)
 
-[node name="Enemy3" parent="." instance=ExtResource("2_qe32p")]
-position = Vector2(857, 78)
-
-[node name="Enemy2" parent="." instance=ExtResource("2_qe32p")]
-position = Vector2(899, 152)
-
 [node name="Player" parent="." instance=ExtResource("1_m7klh")]
 position = Vector2(866, 446)
 
@@ -50,25 +44,13 @@ debug_color = Color(0.945098, 0, 0.168627, 0.419608)
 position = Vector2(506, 296)
 
 [node name="Campfire" parent="." instance=ExtResource("5_cw3lc")]
-position = Vector2(986, 131)
+position = Vector2(449, 27)
 
 [node name="Slime" parent="." instance=ExtResource("7_epohg")]
-position = Vector2(424, 179)
-
-[node name="Slime2" parent="." instance=ExtResource("7_epohg")]
-position = Vector2(342, 181)
-
-[node name="Slime3" parent="." instance=ExtResource("7_epohg")]
-position = Vector2(490, 401)
-
-[node name="Slime4" parent="." instance=ExtResource("7_epohg")]
-position = Vector2(242, 343)
-
-[node name="Slime5" parent="." instance=ExtResource("7_epohg")]
-position = Vector2(220, 236)
+position = Vector2(184, 100)
 
 [node name="SizeReferences" type="Sprite2D" parent="."]
-position = Vector2(79, 79)
+position = Vector2(690, 192)
 texture = ExtResource("9_f284u")
 
-[connection signal="gameover" from="Player" to="." method="_on_player_gameover"]
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
