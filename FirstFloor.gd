@@ -39,6 +39,11 @@ func _move_camera_right():
 	get_parent().find_child("Camera2D").position.x += 1152
 
 
+# Move the HUD up by one screen length.
+func _move_hud_up():
+	get_tree().root.get_child(0)
+
+
 # This is called when a body hitbox enters the upper door's hitbox.
 func _on_upper_doors_body_entered(body):
 	# Check to see it the hitbox belongs to the player.

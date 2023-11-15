@@ -122,4 +122,4 @@ position = Vector2(240.5, 617.5)
 scale = Vector2(1.02778, 1.22)
 sprite_frames = SubResource("SpriteFrames_t5yoc")
 animation = &"7 hearts"
-frame_progress = 0.121752
+frame_progress = 0.657076

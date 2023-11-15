@@ -76,7 +76,7 @@ func _process(delta):
 	# Normalizes velocity (makes it so that diagonal movement isn't faster) and plays the sprite animation if the player is moving.
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play()
+		$AnimatedSprite2D.play("down")
 	else:
 		$AnimatedSprite2D.stop()
 		
