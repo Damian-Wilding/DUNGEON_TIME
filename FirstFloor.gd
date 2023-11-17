@@ -41,7 +41,16 @@ func _move_camera_right():
 
 # Move the HUD up by one screen length.
 func _move_hud_up():
-	get_tree().root.get_child(0)
+	%HUD.position.y -= 648
+# Move the HUD down by one screen length.
+func _move_hud_down():
+	%HUD.position.y += 648
+# Move the HUD left by one screen length.
+func _move_hud_left():
+	%HUD.position.x -= 1152
+# Move the HUD right by one screen length.
+func _move_hud_right():
+	%HUD.position.x += 1152
 
 
 # This is called when a body hitbox enters the upper door's hitbox.
@@ -52,6 +61,8 @@ func _on_upper_doors_body_entered(body):
 		_move_player_through_upper_door()
 		# Move the camera up 1 room.
 		_move_camera_up()
+		# Move the HUD up 1 room.
+		_move_hud_up()
 		
 
 # This is called when a body hitbox enters the right door's hitbox.
@@ -62,6 +73,8 @@ func _on_right_doors_body_entered(body):
 		_move_player_through_right_door()
 		# Move the camera right 1 room.
 		_move_camera_right()
+		# Move the HUD right 1 room.
+		_move_hud_right()
 
 
 # This is called when a body hitbox enters the lower door's hitbox.
@@ -72,6 +85,8 @@ func _on_lower_doors_body_entered(body):
 		_move_player_through_lower_door()
 		# Move the camera down 1 room.
 		_move_camera_down()
+		# Move the HUD down 1 room.
+		_move_hud_down()
 
 
 # This is called when a body hitbox enters the left door's hitbox.
@@ -82,3 +97,5 @@ func _on_left_doors_body_entered(body):
 		_move_player_through_left_door()
 		# Move the camera left 1 room.
 		_move_camera_left()
+		# Move the HUD left 1 room.
+		_move_hud_left()

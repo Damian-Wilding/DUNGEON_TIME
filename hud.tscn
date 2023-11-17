@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c0r038ujbykuf"]
+[gd_scene load_steps=12 format=3 uid="uid://cpkssi2xgq4va"]
 
 [ext_resource type="Script" path="res://hud.gd" id="1_e84kp"]
 [ext_resource type="Texture2D" uid="uid://d33nwx0acsre" path="res://assets/sprites/test_sprites/health_bar/base health sprites/0hearts.png" id="1_ielq0"]
@@ -10,7 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://dilrii7y58gi0" path="res://assets/sprites/test_sprites/health_bar/base health sprites/6hearts.png" id="7_cxoh1"]
 [ext_resource type="Texture2D" uid="uid://brjl740kks271" path="res://assets/sprites/test_sprites/health_bar/base health sprites/7hearts.png" id="8_vswgp"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_t5yoc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hkns"]
+size = Vector2(1152, 648)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5yawj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -112,14 +115,22 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="HUD" type="Node"]
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("1_e84kp")
 
 [node name="HealthBar" type="Area2D" parent="."]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HealthBar"]
+position = Vector2(576, 324)
+shape = SubResource("RectangleShape2D_6hkns")
+debug_color = Color(1, 1, 1, 0.0823529)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HealthBar"]
 position = Vector2(240.5, 617.5)
 scale = Vector2(1.02778, 1.22)
-sprite_frames = SubResource("SpriteFrames_t5yoc")
-animation = &"7 hearts"
-frame_progress = 0.657076
+sprite_frames = SubResource("SpriteFrames_5yawj")
+animation = &"0 hearts"

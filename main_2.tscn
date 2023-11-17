@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://blol4lgjo3fsx" path="res://campfire.tscn" id="3_ur330"]
 [ext_resource type="PackedScene" uid="uid://ckpobs07afjln" path="res://stairs.tscn" id="4_sroaa"]
 [ext_resource type="PackedScene" uid="uid://bx43digskdenw" path="res://slime.tscn" id="5_o1bkj"]
-[ext_resource type="PackedScene" uid="uid://c0r038ujbykuf" path="res://hud.tscn" id="7_loyxq"]
+[ext_resource type="PackedScene" uid="uid://cpkssi2xgq4va" path="res://hud.tscn" id="7_loyxq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r60sc"]
 size = Vector2(5745, 61)
@@ -1043,6 +1043,7 @@ position = Vector2(404, 856)
 position = Vector2(1563, 220)
 
 [node name="Player" parent="." instance=ExtResource("2_wbsnl")]
+unique_name_in_owner = true
 position = Vector2(576, 324)
 metadata/_edit_group_ = true
 
@@ -1050,6 +1051,7 @@ metadata/_edit_group_ = true
 position = Vector2(576, 324)
 
 [node name="HUD" parent="." instance=ExtResource("7_loyxq")]
+unique_name_in_owner = true
 
 [connection signal="body_entered" from="FirstFloor/UpperDoors" to="FirstFloor" method="_on_upper_doors_body_entered"]
 [connection signal="body_entered" from="FirstFloor/RightDoors" to="FirstFloor" method="_on_right_doors_body_entered"]

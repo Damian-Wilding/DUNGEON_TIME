@@ -67,7 +67,7 @@ func _on_idle_timer_timeout():
 
 
 # This is called when a body hitbox enters the enemy's hit box.
-func _on_slime_hitbox_parent_body_entered(body):
+func _on_enemy_hitbox_parent_body_entered(body):
 	# Check to see if the body is the player's body. (If it's not, then we don't care.)
 	if body.name == "Player":
 		# Delete the player.
@@ -77,7 +77,7 @@ func _on_slime_hitbox_parent_body_entered(body):
 
 
 # This is called when an Area2D hitbox enters the enemy's hitbox
-func _on_slime_hitbox_parent_area_entered(area):
+func _on_enemy_hitbox_parent_area_entered(area):
 	# Check to see if the Area2D is the player's AttackHitbox.
 	if area.name == "AttackHitboxParent":
 		# Delete this enemy.

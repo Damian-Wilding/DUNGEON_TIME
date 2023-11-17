@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
 signal hit
+signal gameover
 var speed = 350
+var hp
 var screen_size
 var is_player_attacking = false
 var is_attack_hitbox_rotated = false
@@ -23,6 +25,8 @@ func _ready():
 	$AttackHitboxParent.hide()
 	# Disable the player's attack hitbox.
 	$AttackHitboxParent/AttackHitbox.set_deferred("disabled", true)
+	# Give the player 5 hp.
+	hp = 5
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -76,9 +80,18 @@ func _process(delta):
 	# Normalizes velocity (makes it so that diagonal movement isn't faster) and plays the sprite animation if the player is moving.
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play("down")
+		$AnimatedSprite2D.play("moving down")
 	else:
-		$AnimatedSprite2D.stop()
+		# Play the idle animation that corresponds to the direction the player is facing.
+		if is_player_facing_up == true:
+			$AnimatedSprite2D.play("idle up")
+		elif is_player_facing_down == true:
+			$AnimatedSprite2D.play("idle down")
+		elif is_player_facing_left == true:
+			$AnimatedSprite2D.play("idle left")
+		elif is_player_facing_right == true:
+			$AnimatedSprite2D.play("idle right")
+		
 		
 		
 	# Updates the position of the player.
@@ -188,6 +201,23 @@ func _fireball_attack():
 	$AttackCooldownTimer.start()
 	# Set is_player_attacking to be true since the player is now attacking.
 	is_player_attacking = true
+
+
+# This is called when the player takes damage.
+func _take_damage():
+	# Check that the player has more than 1 hp.
+	print("Take damage called")
+	if hp > 1:
+		# Lowers the player's hp by 1.
+		hp -= 1
+		# Lower the heart count on the HUD.
+		%HUD._lose_a_heart()
+		print("Player - damage taken ")
+	else:
+		# If the enemy has 1 hp or less, then the player needs to be killed (deleted).
+		queue_free()
+		# Let the main scene know that it's time to initiate gameover protocol.
+		gameover.emit()
 
 
 # This is called when the player's attack timer runs out.
