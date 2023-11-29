@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 100
+var speed = 1000
 @export var random_direction = randi_range(0, 4)
 @export var seconds_to_idle = 1
 @export var seconds_to_move = 1
@@ -17,6 +17,7 @@ var x_max
 var x_min
 var y_max
 var y_min
+var invincible = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -79,13 +80,20 @@ func _process(delta):
 # This is called when this enemy takes damage.
 func _take_damage():
 	print("Enemy is taking damage.")
-	# Check to see if this enemy has more than 1 hp.
-	if hp > 1:
-		# If so, then have this enemy take 1 damage.
-		hp -= 1
-	# If this enemy doesn't have more than 1 hp then kill (delete this enemy).
-	else:
-		queue_free()
+	# Check and make sure the enemy isnt invincible. Nothing will happen if it is.
+	if invincible == false:
+		# Make the enemy invincible for a short time.
+		invincible = true
+		# Start the invincibility timers.
+		$InvincibilityTimer.start()
+		$InvincibilityFlashTimer.start()
+		# Check to see if this enemy has more than 1 hp.
+		if hp > 1:
+			# If so, then have this enemy take 1 damage.
+			hp -= 1
+		# If this enemy doesn't have more than 1 hp then kill (delete this enemy).
+		else:
+			queue_free()
 
 
 # This is called when the ememy's movement timer finishes.
@@ -94,6 +102,7 @@ func _on_moving_timer_timeout():
 	is_idle = true
 	# Get a random number to be the idle timer's time.
 	seconds_to_idle = randi_range(0, 5)
+	seconds_to_idle = 0.5
 	# Set it to be the idle timer's time.
 	$IdleTimer.wait_time = seconds_to_idle
 	# Start the idle timer.
@@ -106,10 +115,10 @@ func _on_moving_timer_timeout():
 func _on_idle_timer_timeout():
 	# Set the enemy to not be idle.
 	is_idle = false
-	# Get a random number to be the moving timer's time.
-	seconds_to_move = randi_range(0, 5)
 	# Get a random direction for the ememy to move in.
 	random_direction = randi_range(1, 4)
+	# Get a random number to be the moving timer's time.
+	seconds_to_move = randi_range(0, 5)
 	# Set it to be the moving timer's time.
 	$MovingTimer.wait_time = seconds_to_move
 	# Start the moving timer.
@@ -132,3 +141,16 @@ func _on_slime_hitbox_parent_area_entered(area):
 	if area.name == "AttackHitboxParent":
 		# Have tis enemy take damage.
 		_take_damage()
+
+
+# This is called when the enemy's invincibility period is over. 
+func _on_invincibility_timer_timeout():
+	# Make the enemy no longer invincible.
+	invincible = false
+	# Stop the invincibility flash timer since it won't be needed anymore.
+	$InvincibilityFlashTimer.stop()
+
+
+# This is called when the enemy needs to change invincibility frames. (It will go back and forth while the enemy is invincible.)
+func _on_invincibility_flash_timer_timeout():
+	# Check to see if the enemy is white.

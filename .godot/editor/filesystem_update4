@@ -1,13 +1,9 @@
-res://main_2.tscn
+res://slime.tscn
 res://enemy.gd
-res://FirstFloor.gd
 res://fire_powerup.tscn
 res://main.tscn
-res://slime.tscn
 res://Player.tscn
+res://main_2.tscn
 res://hud.tscn
-res://hud.gd
 res://Test_Scene.tscn
-res://Player.gd
 res://Slime.gd
-res://enemy_parent.gd

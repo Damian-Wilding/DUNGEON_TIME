@@ -427,7 +427,7 @@ position = Vector2(457, 157)
 script = ExtResource("1_vcgm3")
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="."]
-visibility_layer = 492
+visibility_layer = 508
 position = Vector2(11, 2)
 shape = SubResource("RectangleShape2D_7pcjp")
 
@@ -464,7 +464,7 @@ one_shot = true
 [node name="CollisionWithEnemiesHitboxParent" type="Area2D" parent="." groups=["Player"]]
 
 [node name="CollisionWithEnemiesHitbox" type="CollisionShape2D" parent="CollisionWithEnemiesHitboxParent"]
-visibility_layer = 492
+visibility_layer = 508
 position = Vector2(11, 2)
 shape = SubResource("RectangleShape2D_7pcjp")
 

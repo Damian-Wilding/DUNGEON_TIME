@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bx43digskdenw"]
+[gd_scene load_steps=25 format=3 uid="uid://bx43digskdenw"]
 
 [ext_resource type="Script" path="res://Slime.gd" id="1_uqvb6"]
 [ext_resource type="Texture2D" uid="uid://bhhmr80ebqx65" path="res://assets/sprites/test_sprites/slime/SlimeF1.png" id="2_l6dg0"]
@@ -104,31 +104,29 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4l0rk"]
-radius = 16.0
-height = 38.0
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_70fm7"]
 radius = 16.0
 height = 38.0
 
 [node name="Slime" type="CharacterBody2D" groups=["Enemy"]]
-position = Vector2(540, 289)
+position = Vector2(2, 3)
 script = ExtResource("1_uqvb6")
+seconds_to_idle = null
+seconds_to_move = null
+is_idle = null
+hp = null
+can_leave_room = null
+max_x = null
+max_y = null
+min_x = null
+min_y = null
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(153, 115)
+position = Vector2(-2, -3)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_0bqnj")
 animation = &"up"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-light_mask = 16
-visibility_layer = 8
-position = Vector2(154, 115)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_4l0rk")
 
 [node name="IdleTimer" type="Timer" parent="."]
 one_shot = true
@@ -136,16 +134,23 @@ one_shot = true
 [node name="MovingTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="InvincibilityTimer" type="Timer" parent="."]
+
+[node name="InvincibilityFlashTimer" type="Timer" parent="."]
+
 [node name="SlimeHitboxParent" type="Area2D" parent="." groups=["Enemy"]]
+position = Vector2(-12, -3)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="SlimeHitboxParent"]
-light_mask = 64
-visibility_layer = 131
-position = Vector2(154, 115)
+light_mask = 80
+visibility_layer = 139
+position = Vector2(10, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_70fm7")
 
 [connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]
 [connection signal="timeout" from="MovingTimer" to="." method="_on_moving_timer_timeout"]
+[connection signal="timeout" from="InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]
+[connection signal="timeout" from="InvincibilityFlashTimer" to="." method="_on_invincibility_flash_timer_timeout"]
 [connection signal="area_entered" from="SlimeHitboxParent" to="." method="_on_slime_hitbox_parent_area_entered"]
 [connection signal="body_entered" from="SlimeHitboxParent" to="." method="_on_slime_hitbox_parent_body_entered"]

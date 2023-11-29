@@ -58,4 +58,7 @@ texture = ExtResource("9_f284u")
 [node name="HUD" parent="." instance=ExtResource("10_loti1")]
 unique_name_in_owner = true
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
