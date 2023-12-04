@@ -137,8 +137,6 @@ wait_time = 0.5
 one_shot = true
 
 [node name="RecoilTimer" type="Timer" parent="."]
-wait_time = 0.3
-one_shot = true
 
 [node name="SlimeHitboxParent" type="Area2D" parent="." groups=["Enemy"]]
 position = Vector2(-12, -3)
@@ -155,6 +153,5 @@ shape = SubResource("CapsuleShape2D_70fm7")
 [connection signal="timeout" from="InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]
 [connection signal="timeout" from="InvincibilityFlashTimer" to="." method="_on_invincibility_flash_timer_timeout"]
 [connection signal="timeout" from="RedFlashDamageTakenTimer" to="." method="_on_red_flash_damage_taken_timer_timeout"]
-[connection signal="timeout" from="RecoilTimer" to="." method="_on_recoil_timer_timeout"]
 [connection signal="area_entered" from="SlimeHitboxParent" to="." method="_on_slime_hitbox_parent_area_entered"]
 [connection signal="body_entered" from="SlimeHitboxParent" to="." method="_on_slime_hitbox_parent_body_entered"]

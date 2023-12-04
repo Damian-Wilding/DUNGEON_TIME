@@ -49,7 +49,7 @@ position = Vector2(506, 296)
 position = Vector2(449, 27)
 
 [node name="Slime" parent="." instance=ExtResource("7_epohg")]
-position = Vector2(184, 100)
+position = Vector2(636, 436)
 
 [node name="SizeReferences" type="Sprite2D" parent="."]
 position = Vector2(690, 192)
@@ -57,8 +57,10 @@ texture = ExtResource("9_f284u")
 
 [node name="HUD" parent="." instance=ExtResource("10_loti1")]
 unique_name_in_owner = true
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2(576, 324)
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]

@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
-var speed = 1000
+var speed = 100
 @export var random_direction = randi_range(0, 4)
 @export var seconds_to_idle = 1
 @export var seconds_to_move = 1
 @export var is_idle = false
+var is_white = false
 @export var hp = 3
 @export var can_leave_room = false
+@export var is_taking_damage_recoil = false
 @export var max_x = 0
 @export var max_y = 0
 @export var min_x = 0
@@ -50,31 +52,36 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	# Sets the velocity to be zero from the last time.
-	velocity = Vector2.ZERO
-	# Check to see if the enemy is idle. If it's not then he should be moving.
-	if is_idle == false:
-		# Check what direction the enemy is going to go and make it go that direction.
-		# Also check to make sure the enemy is in bounds. If it's out of bounds, it won't go in that direction anymore until it's back in bouds.
-		if  random_direction == 1 and get_position().y > y_min:
-			$AnimatedSprite2D.play("up")
-			velocity = Vector2(0, -1)
-		if  random_direction == 2 and get_position().x > x_min:
-			velocity = Vector2(-1, 0)
-			$AnimatedSprite2D.flip_h = false
-			$AnimatedSprite2D.play("left")
-		if  random_direction == 3 and get_position().x < x_max:
-			velocity = Vector2(1, 0)
-			$AnimatedSprite2D.flip_h = true
-			$AnimatedSprite2D.play("left")
-		if  random_direction == 4 and get_position().y < y_max:
-			velocity = Vector2(0, 1)
-			$AnimatedSprite2D.play("down")
+	# First check to see if the enemy is taking damage recoil. That will override any movement.
+	if is_taking_damage_recoil == true:
+		# Set the velocity for the enemy.
+		velocity = (position - %Player.position).normalized() * 5
+	else:
+		# Sets the velocity to be zero from the last time.
+		velocity = Vector2.ZERO
+		# Check to see if the enemy is idle. If it's not then he should be moving.
+		if is_idle == false:
+			# Check what direction the enemy is going to go and make it go that direction.
+			# Also check to make sure the enemy is in bounds. If it's out of bounds, it won't go in that direction anymore until it's back in bouds.
+			if  random_direction == 1 and get_position().y > y_min:
+				$AnimatedSprite2D.play("up")
+				velocity = Vector2(0, -1)
+			if  random_direction == 2 and get_position().x > x_min:
+				velocity = Vector2(-1, 0)
+				$AnimatedSprite2D.flip_h = false
+				$AnimatedSprite2D.play("left")
+			if  random_direction == 3 and get_position().x < x_max:
+				velocity = Vector2(1, 0)
+				$AnimatedSprite2D.flip_h = true
+				$AnimatedSprite2D.play("left")
+			if  random_direction == 4 and get_position().y < y_max:
+				velocity = Vector2(0, 1)
+				$AnimatedSprite2D.play("down")
 
 
-		# Updates the position of the enemy.
-		velocity = velocity * speed
-		move_and_collide(velocity * delta)
+	# Updates the position of the enemy.
+	velocity = velocity * speed
+	move_and_collide(velocity * delta)
 
 
 # This is called when this enemy takes damage.
@@ -84,9 +91,14 @@ func _take_damage():
 	if invincible == false:
 		# Make the enemy invincible for a short time.
 		invincible = true
-		# Start the invincibility timers.
-		$InvincibilityTimer.start()
-		$InvincibilityFlashTimer.start()
+		# Start the red flash damage taken timer. (Has the enemy flash red when they take damage.
+		$RedFlashDamageTakenTimer.start()
+		# Have the enemy flash red while they take damage.
+		$AnimatedSprite2D.modulate = Color(1, 0, 0)
+		# Set the value that tells us that the enemy is taking recoil from something to be true.
+		is_taking_damage_recoil = true
+		# Start the recoil timer.
+		$RecoilTimer.start()
 		# Check to see if this enemy has more than 1 hp.
 		if hp > 1:
 			# If so, then have this enemy take 1 damage.
@@ -102,7 +114,7 @@ func _on_moving_timer_timeout():
 	is_idle = true
 	# Get a random number to be the idle timer's time.
 	seconds_to_idle = randi_range(0, 5)
-	seconds_to_idle = 0.5
+	#seconds_to_idle = 0.5
 	# Set it to be the idle timer's time.
 	$IdleTimer.wait_time = seconds_to_idle
 	# Start the idle timer.
@@ -149,8 +161,36 @@ func _on_invincibility_timer_timeout():
 	invincible = false
 	# Stop the invincibility flash timer since it won't be needed anymore.
 	$InvincibilityFlashTimer.stop()
+	# Make sure that the enemy doesn't have a tint to the sprite.
+	$AnimatedSprite2D.modulate = Color(1, 1, 1)
 
 
 # This is called when the enemy needs to change invincibility frames. (It will go back and forth while the enemy is invincible.)
 func _on_invincibility_flash_timer_timeout():
 	# Check to see if the enemy is white.
+	if is_white == true:
+		# Make the enemy not white.
+		is_white = false
+		$AnimatedSprite2D.modulate = Color(1, 1, 1)
+	# This will be called if the enemy is not white.
+	else:
+		# Make the enemy white.
+		is_white = true
+		$AnimatedSprite2D.modulate = Color(2, 2, 2)
+
+
+# This is called when the enemy is ready to stop being red from taking damage.
+func _on_red_flash_damage_taken_timer_timeout():
+	# Make the enemy not red anymore.
+	$AnimatedSprite2D.modulate = Color(1, 1, 1)
+	# Start the invincibility timers.
+	$InvincibilityTimer.start()
+	$InvincibilityFlashTimer.start()
+
+
+# This is called when the enemy needs to stop flying back from damage recoil.
+func _on_recoil_timer_timeout():
+	# Set the velocity to zero since the enemy needs to stop taking recoil.
+	velocity = Vector2.ZERO
+	# Set the is taking damage recoil value to false.
+	is_taking_damage_recoil = false

@@ -1,3 +1,5 @@
+CharacterBody2D
+RigidBody2D
 Timer
 Camera2D
 Control
@@ -7,10 +9,8 @@ Area2D
 Node
 Sprite2D
 CollisionPolygon2D
-CharacterBody2D
 StaticBody2D
 Label
 VisibleOnScreenNotifier2D
-RigidBody2D
 Skeleton2D
 Marker2D
