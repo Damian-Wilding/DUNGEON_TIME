@@ -79,8 +79,20 @@ func _process(delta):
 				$AnimatedSprite2D.play("down")
 
 
-	# Updates the position of the enemy.
+	# Update the position of the enemy.
+	_move(delta)
+
+
+# This is called when the enemy's velocity needs to be used to update the enemy's position.
+func _move(delta):
+	# Multiply the velocity by the enemy's speed stat.
 	velocity = velocity * speed
+	# Check that the enemy isn't going through a wall. If they are, set the velocity in that direction to be 0.
+	if velocity.x >= x_max or velocity.x <= x_min:
+		velocity.x = 0
+	if velocity.y >= y_max or velocity.y <= y_min:
+		velocity.y = 0
+	# Call the move and collide function to make the enemy move.
 	move_and_collide(velocity * delta)
 
 
