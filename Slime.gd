@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 100
+var speed = 1000
 @export var random_direction = randi_range(0, 4)
 @export var seconds_to_idle = 1
 @export var seconds_to_move = 1
@@ -85,13 +85,21 @@ func _process(delta):
 
 # This is called when the enemy's velocity needs to be used to update the enemy's position.
 func _move(delta):
+	# Check that the enemy isn't going through a wall. If they are, set the velocity in that direction to be 0.
+	if position.x >= x_max and velocity.x > 0:
+		print("Slime is out of bounds (Right)")
+		velocity.x = 0
+	elif position.x <= x_min and velocity.x < 0:
+		print("Slime is out of bounds (Left)")
+		velocity.x = 0
+	if position.y >= y_max and velocity.y > 0:
+		print("Slime is out of bounds (Down)")
+		velocity.y = 0
+	elif position.y <= y_min and velocity.y < 0:
+		print("Slime is out of bounds (Up)")
+		velocity.y = 0
 	# Multiply the velocity by the enemy's speed stat.
 	velocity = velocity * speed
-	# Check that the enemy isn't going through a wall. If they are, set the velocity in that direction to be 0.
-	if velocity.x >= x_max or velocity.x <= x_min:
-		velocity.x = 0
-	if velocity.y >= y_max or velocity.y <= y_min:
-		velocity.y = 0
 	# Call the move and collide function to make the enemy move.
 	move_and_collide(velocity * delta)
 
@@ -126,7 +134,7 @@ func _on_moving_timer_timeout():
 	is_idle = true
 	# Get a random number to be the idle timer's time.
 	seconds_to_idle = randi_range(0, 5)
-	#seconds_to_idle = 0.5
+	seconds_to_idle = 0.5
 	# Set it to be the idle timer's time.
 	$IdleTimer.wait_time = seconds_to_idle
 	# Start the idle timer.

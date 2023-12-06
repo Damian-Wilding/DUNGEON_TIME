@@ -2,12 +2,12 @@ res://campfire.tscn::9db3818714a9730124ff87b93aa4977c::1699035237::res://.godot/
 res://enemy.tscn::047c2420cab41713dcf083aafae27359::1699035274::res://.godot/exported/133200997/export-ec12bd2205a8e44213188668d747d7fa-enemy.scn
 res://enemy_parent.tscn::bf111dc958715c2d7826a3a91086f9de::1699979455::res://.godot/exported/133200997/export-13e9972ff879951f21fa9aea5f0f4866-enemy_parent.scn
 res://fireball.tscn::ca4d979ceb9deb3a3d1295c3ee6a0391::1699035513::res://.godot/exported/133200997/export-9c6f261e3c16c36630f031fecbbf98f8-fireball.scn
-res://fire_powerup.tscn::165ef9302fe52e3b684333792be1db37::1700017377::res://.godot/exported/133200997/export-b5cc61a7cbe37050865490c6b59b3ded-fire_powerup.scn
-res://hud.tscn::f7144fa14278c477b8abb03e30f62478::1700017378::res://.godot/exported/133200997/export-f4cf891e5f7a93b93d9b27cfb8401ccb-hud.scn
+res://fire_powerup.tscn::165ef9302fe52e3b684333792be1db37::1701794766::res://.godot/exported/133200997/export-b5cc61a7cbe37050865490c6b59b3ded-fire_powerup.scn
+res://hud.tscn::ff6ad2f71c32c92d8b7fb3d4e8bfb2d2::1701794767::res://.godot/exported/133200997/export-f4cf891e5f7a93b93d9b27cfb8401ccb-hud.scn
 res://key.tscn::94a80877f68fa35874074056d907bdf3::1699035547::res://.godot/exported/133200997/export-f7be13084cad228fbf322e8c954241ad-key.scn
-res://main.tscn::bf8fe6f3beae5bb4c3ba0c0334a0a3b5::1700017377::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn
-res://main_2.tscn::8852131141ac40a3c35302fb4e64dd18::1700018115::res://.godot/exported/133200997/export-47a4b0326b08bc41e403807c6a3df358-main_2.scn
-res://Player.tscn::ee062f0ac585ed3afec29afd5dd43dbb::1700017377::res://.godot/exported/133200997/export-90e1ff3baa03524a506ff0f7a9d78dcf-Player.scn
+res://main.tscn::bf8fe6f3beae5bb4c3ba0c0334a0a3b5::1701794766::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn
+res://main_2.tscn::36200e084ed1013be2dc0f7a20418988::1701794767::res://.godot/exported/133200997/export-47a4b0326b08bc41e403807c6a3df358-main_2.scn
+res://Player.tscn::5a6967ea906879c8ab6dc587b217f02b::1701794767::res://.godot/exported/133200997/export-90e1ff3baa03524a506ff0f7a9d78dcf-Player.scn
 res://room_1.tscn::8aaf718fd8241d7462033e88a307ea1c::1699035829::res://.godot/exported/133200997/export-2a54053779543f678f7945529abe13cd-room_1.scn
 res://room_2.tscn::64759ecd87fbb1888f57814602623000::1699035931::res://.godot/exported/133200997/export-1165587e21afa02310f244ce19425289-room_2.scn
 res://room_3.tscn::cf674a24de139ad3d16ea64ff42295cb::1699979456::res://.godot/exported/133200997/export-5b5e30d82e5f0f761b5b40f2b0783c64-room_3.scn
@@ -15,7 +15,7 @@ res://room_4.tscn::b5a9f1c4f24cbb49097a1753e3df24f6::1699979456::res://.godot/ex
 res://room_5.tscn::c64d2da1b8a1ba183e8cdfcc235d2c9a::1699036231::res://.godot/exported/133200997/export-8585bb2e9687aa371fddd50086f5a86b-room_5.scn
 res://room_6.tscn::f26eac2932ebae9ea0f0738d052096e2::1699036276::res://.godot/exported/133200997/export-8d712a5844706cfc95146250746415e3-room_6.scn
 res://room_7.tscn::2b450618c4a055542faeee60c98843bd::1699036351::res://.godot/exported/133200997/export-247547b28d2dbbe8e60b1bbf499c61e4-room_7.scn
-res://slime.tscn::0b0b7c8f08273febbf76aab0c9a70eec::1700017377::res://.godot/exported/133200997/export-b756424139543dd116d3f8c138331a28-slime.scn
+res://slime.tscn::70065a6250e54d8d4aad5c1222f81904::1701795628::res://.godot/exported/133200997/export-b756424139543dd116d3f8c138331a28-slime.scn
 res://stairs.tscn::f7803dc7467f42091f2350b76425b07f::1699036456::res://.godot/exported/133200997/export-cdd71dce3ca6dd842d018519d906e133-stairs.scn
 res://stairs_1.tscn::cd8bec43236f9788ea1dc4b66a6110ce::1699036471::res://.godot/exported/133200997/export-716028126ce3f3b7dad371f4dca51711-stairs_1.scn
-res://Test_Scene.tscn::4081c557aab53f2f8644bf41255af7f5::1699979455::res://.godot/exported/133200997/export-a79d9db943c2c30f3a82537bba83f32b-Test_Scene.scn
+res://Test_Scene.tscn::297d4a31ff05b4600df2fd6261fe139f::1701794768::res://.godot/exported/133200997/export-a79d9db943c2c30f3a82537bba83f32b-Test_Scene.scn
