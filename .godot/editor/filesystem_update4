@@ -14,3 +14,7 @@ res://FirstFloor.gd
 res://hud.gd
 res://stairs.gd
 res://stairs.tscn
+res://room_1.tscn
+res://room_2.tscn
+res://room_3.tscn
+res://room_4.tscn

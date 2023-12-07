@@ -99,6 +99,7 @@ shape = SubResource("RectangleShape2D_0vbjg")
 debug_color = Color(0.952941, 0, 0.290196, 0.419608)
 
 [node name="Door8" type="Area2D" parent="."]
+position = Vector2(0, -20)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door8"]
 light_mask = 4

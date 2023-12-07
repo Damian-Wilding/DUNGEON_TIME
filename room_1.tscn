@@ -65,7 +65,7 @@ horizontal_alignment = 1
 
 [node name="Door1" type="CollisionShape2D" parent="Door1Parent"]
 light_mask = 4
-position = Vector2(550.5, 54)
+position = Vector2(550.5, 13)
 shape = SubResource("RectangleShape2D_7gkdh")
 debug_color = Color(0, 0.647059, 0.188235, 0.419608)
 

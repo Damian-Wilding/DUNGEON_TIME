@@ -44,7 +44,7 @@ debug_color = Color(0, 0.647059, 0.188235, 0.419608)
 
 [node name="Door3" type="CollisionShape2D" parent="Door3Parent"]
 light_mask = 4
-position = Vector2(550.5, 54)
+position = Vector2(550.5, 19)
 shape = SubResource("RectangleShape2D_ola1n")
 debug_color = Color(0, 0.647059, 0.188235, 0.419608)
 
