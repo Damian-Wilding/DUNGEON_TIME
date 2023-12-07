@@ -1,14 +1,28 @@
 extends Area2D
 
+var are_stairs_hidden
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	# Start the floor out with the stairs hidden and disabled.
+	$Stairs.hide()
+	$Stairs/CollisionShape2D.set_deferred("disabled", true)
+	# Mark that the stairs are hidden and disabled when the floor first appears.
+	are_stairs_hidden = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	# Check to see if the stairs are hidden
+	if are_stairs_hidden == true:
+		# If they are hidden, check to see if they are ready to appear. (They appear when the player has killed all enemies on the floor.)
+		if %Player.enemies_killed == 4:
+			# If the player has killed all the enemies, then show and enable the stairs.
+			$Stairs.show()
+			$Stairs/CollisionShape2D.set_deferred("disabled", false)
+			# Get rid of the text that tells the player how to make the stairs appear.
+			$StairsInstructions.hide()
 
 
 # Move the player through a door on the top side of the room.

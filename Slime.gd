@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 1000
+var speed = 100
 @export var random_direction = randi_range(0, 4)
 @export var seconds_to_idle = 1
 @export var seconds_to_move = 1
@@ -126,6 +126,8 @@ func _take_damage():
 		# If this enemy doesn't have more than 1 hp then kill (delete this enemy).
 		else:
 			queue_free()
+			# Add to the counter of the number of enemies killed by the player.
+			%Player.enemies_killed += 1
 
 
 # This is called when the ememy's movement timer finishes.

@@ -25,5 +25,8 @@ func _on_body_entered(body):
 		if get_parent().get_parent().has_node("Floor") == true:
 			# Delete floors after floor 1.
 			get_parent().get_parent().find_child("Floor").queue_free()
+			
+		# This is temporary code so don't worry about it. I will delete it when I make randomly generated floors.
+		%HUD/DeleteThisLater.show()
 		
 

@@ -435,9 +435,7 @@ shape = SubResource("RectangleShape2D_7pcjp")
 position = Vector2(6, 65)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_1ogso")
-animation = &"idle down"
-frame = 14
-frame_progress = 0.99809
+animation = &"moving down"
 
 [node name="AttackHitboxParent" type="Area2D" parent="."]
 position = Vector2(11, 2)

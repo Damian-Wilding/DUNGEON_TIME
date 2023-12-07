@@ -8,3 +8,9 @@ res://hud.tscn
 res://Test_Scene.tscn
 res://Slime.gd
 res://Main.gd
+res://Test_Scene.gd
+res://Player.gd
+res://FirstFloor.gd
+res://hud.gd
+res://stairs.gd
+res://stairs.tscn

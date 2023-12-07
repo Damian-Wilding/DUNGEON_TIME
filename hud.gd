@@ -1,6 +1,5 @@
 extends Control
 
-
 var hp
 
 
@@ -8,6 +7,9 @@ var hp
 func _ready():
 	# Give the player 5 hearts when the HUD is created.
 	$HealthBar/AnimatedSprite2D.play("5 hearts")
+	
+	
+	$DeleteThisLater.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

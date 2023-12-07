@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cpkssi2xgq4va"]
+[gd_scene load_steps=13 format=3 uid="uid://cpkssi2xgq4va"]
 
 [ext_resource type="Script" path="res://hud.gd" id="1_e84kp"]
 [ext_resource type="Texture2D" uid="uid://d33nwx0acsre" path="res://assets/sprites/test_sprites/health_bar/base health sprites/0hearts.png" id="1_ielq0"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c12fak85pl377" path="res://assets/sprites/test_sprites/health_bar/base health sprites/5hearts.png" id="6_gsf04"]
 [ext_resource type="Texture2D" uid="uid://dilrii7y58gi0" path="res://assets/sprites/test_sprites/health_bar/base health sprites/6hearts.png" id="7_cxoh1"]
 [ext_resource type="Texture2D" uid="uid://brjl740kks271" path="res://assets/sprites/test_sprites/health_bar/base health sprites/7hearts.png" id="8_vswgp"]
+[ext_resource type="FontFile" uid="uid://2wx5ii18ovn6" path="res://assets/fonts/PixelAzureBonds-327Z.ttf" id="10_7jnll"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6hkns"]
 size = Vector2(1152, 648)
@@ -134,3 +135,15 @@ position = Vector2(240.5, 617.5)
 scale = Vector2(1.02778, 1.22)
 sprite_frames = SubResource("SpriteFrames_5yawj")
 animation = &"0 hearts"
+
+[node name="DeleteThisLater" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 264.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 21
+theme_override_fonts/font = ExtResource("10_7jnll")
+theme_override_font_sizes/font_size = 27
+text = "I haven't coded this far into the game yet (As of Dec 2023). 
+Go see if I've updated the game I guess..."
+horizontal_alignment = 1

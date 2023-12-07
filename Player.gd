@@ -16,6 +16,7 @@ var is_player_facing_left = false
 var is_player_facing_right = false
 
 @export var keys = 0
+@export var enemies_killed = 0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -80,17 +81,17 @@ func _process(delta):
 	# Normalizes velocity (makes it so that diagonal movement isn't faster) and plays the sprite animation if the player is moving.
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play("moving down")
-	else:
+		$AnimatedSprite2D.play("idle down")
+	#else:
 		# Play the idle animation that corresponds to the direction the player is facing.
-		if is_player_facing_up == true:
-			$AnimatedSprite2D.play("idle up")
-		elif is_player_facing_down == true:
-			$AnimatedSprite2D.play("idle down")
-		elif is_player_facing_left == true:
-			$AnimatedSprite2D.play("idle left")
-		elif is_player_facing_right == true:
-			$AnimatedSprite2D.play("idle right")
+		#if is_player_facing_up == true:
+			#$AnimatedSprite2D.play("idle up")
+		#elif is_player_facing_down == true:
+			#$AnimatedSprite2D.play("idle down")
+		#elif is_player_facing_left == true:
+			#$AnimatedSprite2D.play("idle left")
+		#elif is_player_facing_right == true:
+			#$AnimatedSprite2D.play("idle right")
 		
 		
 		
@@ -203,6 +204,12 @@ func _fireball_attack():
 	is_player_attacking = true
 
 
+# This is called when the player kills an enemy.
+func _update_enemy_kill_count():
+	# Add 1 to the player's kill count.
+	enemies_killed += 1
+	
+	
 # This is called when the player takes damage.
 func _take_damage():
 	# Check that the player has more than 1 hp.
