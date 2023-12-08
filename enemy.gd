@@ -23,8 +23,8 @@ func _start(pos):
 func _on_body_entered(body):
 	# Check to see if the body is the player's body. (If it's not, then we don't care.)
 	if body.name == "Player":
-		# Delete the player.
-		body.queue_free()
+		# Have the player take damage
+		get_parent().get_parent().get_child(-2)._take_damage()
 	# Delete this enemy.
 	queue_free()
 

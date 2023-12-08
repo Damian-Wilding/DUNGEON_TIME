@@ -29,16 +29,24 @@ func _move_player_to_right():
 	
 # Move the player through a door on the top side of the room.
 func _move_player_through_upper_door():
-	$Player.position.y -= 210
+	$Player.position.y -= 213
+	# Move the HUD along with the player.
+	%HUD.position.y -= 648
 # Move the player through a door on the bottom side of the room.
 func _move_player_through_lower_door():
 	$Player.position.y += 210
+	# Move the HUD along with the player.
+	%HUD.position.y += 648
 # Move the player through a door on the right side of the room.
 func _move_player_through_right_door():
 	$Player.position.x += 400
+	# Move the HUD along with the player.
+	%HUD.position.y += 1152
 # Move the player through a door on the left side of the room.
 func _move_player_through_left_door():
 	$Player.position.x -= 400
+	# Move the HUD along with the player.
+	%HUD.position.y -= 1152
 	
 	
 # Move the camera up by one screen length.

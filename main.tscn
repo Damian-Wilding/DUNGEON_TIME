@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxxh6hpo6cbk6"]
+[gd_scene load_steps=11 format=3 uid="uid://cxxh6hpo6cbk6"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_2fgkk"]
 [ext_resource type="PackedScene" uid="uid://cpxfrv8uvvuhw" path="res://room_1.tscn" id="2_shq6n"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c8cdepublwl2q" path="res://room_5.tscn" id="6_ttyf8"]
 [ext_resource type="PackedScene" uid="uid://dmnkc6086jjdt" path="res://room_6.tscn" id="7_o6fgv"]
 [ext_resource type="PackedScene" uid="uid://bth5tqpokuxe2" path="res://room_7.tscn" id="8_ola1b"]
+[ext_resource type="PackedScene" uid="uid://cpkssi2xgq4va" path="res://hud.tscn" id="10_a4q0a"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_2fgkk")
@@ -37,7 +38,11 @@ position = Vector2(0, -2592)
 position = Vector2(576, 324)
 
 [node name="Player" parent="." instance=ExtResource("3_khukx")]
+unique_name_in_owner = true
 position = Vector2(551, 476)
+
+[node name="HUD" parent="." instance=ExtResource("10_a4q0a")]
+unique_name_in_owner = true
 
 [connection signal="door1_entered" from="Room1" to="." method="_on_room_1_door_1_entered"]
 [connection signal="door2_entered" from="Room2" to="." method="_on_room_2_door_2_entered"]
